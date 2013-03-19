@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :email
+  attr_accessible :admin unless Rails.env.production?
 
   def self.create_with_omniauth(auth)
     create! do |user|
