@@ -140,7 +140,7 @@ describe EventsController do
 
     it 'should redirect with error if not admin' do
       event = Event.create! valid_attributes
-      put :update, {:id => event.to_param, :event => { "name" => "MyString" }}, valid_admin_session
+      put :update, {:id => event.to_param, :event => { "name" => "MyString" }}, valid_session
       response.should redirect_to(root_path)
     end
 
