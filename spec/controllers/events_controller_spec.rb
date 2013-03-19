@@ -24,8 +24,14 @@ describe EventsController do
   # Event. As you add validations to Event, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
-  end
+    {
+      :name => 'Hackathon',
+      :date => DateTime.now.next_week,
+      :description => '1337 hackathon',
+      :location => 'supersecretspylocation'
+    }
+ end
+
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
