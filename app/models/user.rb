@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :provider, :uid, :name, :email
+  attr_accessible :provider, :uid, :name, :email, :github_username
   attr_accessible :admin unless Rails.env.production?
 
   def self.create_with_omniauth(auth)
@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
       if auth['info']
          user.name = auth['info']['name'] || ""
          user.email = auth['info']['email'] || ""
+         user.github_username = auth['info']['nickname'] || ""
       end
     end
   end
