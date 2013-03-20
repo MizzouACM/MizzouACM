@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
          user.email = auth['info']['email'] || ""
          user.github_username = auth['info']['nickname'] || ""
       end
+      user.admin = true unless Rails.env.production?
     end
   end
 

@@ -1,8 +1,21 @@
-= form_for(@user) do |f|
-  = f.label :email
-  = f.text_field :email
-  -unless Rails.env.production?
-    = f.label :admin
-    = f.select :admin, [true, false]
-  %br/
-  = f.submit "Sign in"
+
+%h2 Editing User
+
+%p
+  Name:
+  = @user.name
+%p
+  Github Username:
+  = @user.github_username
+%p
+  Email:
+  = @user.email
+
+= simple_form_for(@user) do |f|
+
+  .form-inputs
+    = f.input :admin
+
+  .form-actions
+    = f.button :submit, 'Update User'
+
