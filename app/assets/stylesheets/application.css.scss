@@ -52,7 +52,7 @@ body{
   background-color: #fff;
   font-size: 18px;
   line-height: 25px;
-  background: url('/images/diamond-pattern.png') center;
+  background: image_url('diamond-pattern.png') center;
 }
 
 
@@ -107,7 +107,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   width: 100%;
   height: 472px;
   background-size: cover;
-  background: url('/images/homepage.jpg') center top repeat-x;
+  background: image_url('homepage.jpg') center top repeat-x;
   border-bottom: 1px solid #000;
 }
 
