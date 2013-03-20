@@ -1,18 +1,26 @@
 !!!
 %html
   %head
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Mizzouacm"
-      %meta{:content => content_for?(:description) ? yield(:description) : "Mizzouacm", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
-        = csrf_meta_tags
-        = yield(:head)
-  %body{:class => "#{controller_name} #{action_name}"}
-    .navbar.navbar-fixed-top
-      %nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
+    = stylesheet_link_tag "application", :media => "all"
+    %link{:href => "MyFontsWebfontsKit/MyFontsWebfontsKit.css", :rel => "stylesheet", :type => "text/css"}/
+  %body.body
+    #top-header
+      #headercenter
+        %div{:style => "right: 0px; float: right;"}
+          .nav.link{:name => "login"}
+            Log in with github
+    #gloss
+      = link_to root_path
+      #logo
+        ACM
+        %span.blue MIZZOU
+      %ul#menu
+        = nav_link 'Home', root_path
+        = nav_link 'Projects', '#'
+        = nav_link 'Events', events_path
+        = nav_link 'People', '#'
+        = nav_link 'Sponsorship', '#'
+        = nav_link 'Join ACM', 'https://orgsync.com/47160/chapter'
     #main{:role => "main"}
       .container
         .content
@@ -20,6 +28,3 @@
             .span12
               = render 'layouts/messages'
               = yield
-          %footer
-      / ! end of .container
-    / ! end of #main
