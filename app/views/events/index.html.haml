@@ -1,27 +1,27 @@
-%h1 Listing events
+#wrapper
+  %h1 Event driven architecture
+  .box
+    %p ACM Mizzou holds frequent workshops, lectures, hackerspaces, and social events.
+    %p We're a community driven by sharing knowledge, building projects, and helping each other become better hackers. All workshops are run by volunteers. If you have something cool to share with the Hack community, email workshops@hackersatberkeley.com to set up an event.
+    %p
+  %h2 Upcoming Events
+  .box
+    - if user_is_admin?
+      %p{:style => 'float: right;'}
+        = link_to 'New Event', new_event_path, :style => 'float: right;'
+    - @events.each do |event|
+      %p 
+        Name:
+        = event.name
+      %p 
+        Description:  
+        = event.description
+      %p 
+        Location:  
+        = event.location       
+      %p
+        Time:
+        = event.date.to_s
+      %hr
 
-%table.table
-  %tr
-    %th Name
-    %th Date
-    %th Location
-    %th Description
-    %th
-    %th
-    %th
 
-  - @events.each do |event|
-    %tr
-      %td= event.name
-      %td= event.date
-      %td= event.location
-      %td= event.description
-      %td= link_to 'Show', event, :class => 'btn'
-      - if user_is_admin?
-        %td= link_to 'Edit', edit_event_path(event), :class => 'btn'
-        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn'
-
-%br
-
-- if user_is_admin?
-  = link_to 'New Event', new_event_path, :class => 'btn'
