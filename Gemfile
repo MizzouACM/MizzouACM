@@ -32,7 +32,7 @@ gem "html2haml", ">= 1.0.1", :group => :development
 
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "omniauth", ">= 1.1.3"
-gem "omniauth-github"
+gem "omniauth-github", :git => 'git://github.com/ryan-endacott/omniauth-github.git'
 gem "simple_form", ">= 2.1.0"
 gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
