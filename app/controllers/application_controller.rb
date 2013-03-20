@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
+  helper_method :user_must_be_admin
   helper_method :user_is_admin?
 
   private
@@ -31,8 +32,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def user_is_admin?
+    def user_must_be_admin
       redirect_to root_url, :alert => 'You must be a master hacker do that.' unless current_user and current_user.is_admin?
+    end
+
+    def user_is_admin?
+      current_user and current_user.is_admin?
     end
 
 end
