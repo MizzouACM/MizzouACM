@@ -6,4 +6,10 @@ FactoryGirl.define do
     uid "12345"
     name "Bob"
   end
+  factory :admin, :class => :user do
+    provider "github"
+    uid '11111'
+    name 'Arnold'
+    admin true
+  end
 end
