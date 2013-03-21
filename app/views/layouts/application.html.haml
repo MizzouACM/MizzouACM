@@ -7,8 +7,7 @@
     #top-header
       #headercenter
         %div{:style => "right: 0px; float: right;"}
-          .nav.link{:name => "login"}
-            Log in with github
+          = render 'layouts/user_nav'
     #gloss
       = link_to root_path
       #logo
