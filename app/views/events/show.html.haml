@@ -5,7 +5,7 @@
   = @event.name
 %p
   %b Date:
-  = @event.date
+  = @event.date.to_s(:pretty)
 %p
   %b Location:
   = @event.location
