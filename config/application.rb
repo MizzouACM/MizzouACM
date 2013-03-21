@@ -24,7 +24,8 @@ module Mizzouacm
     end
 
     # Precompile everything on heroku
-    config.assets.precompile += %w( *.js *.css *.scss )
+    config.assets.precompile += %w(bootstrap_and_overrides.css.scss)
+    config.assets.precompile += %w(brendon.css.scss)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
