@@ -4,46 +4,42 @@ describe UsersController do
 
   before do
     @user = FactoryGirl.create(:user)
+    @admin = FactoryGirl.create(:admin)
   end
 
-  describe "Get 'show' for non-logged in user" do
-    it "redirects user to the root path to login" do
-      session[:user_id] = nil
-      get 'show', :id => @user.id
-      response.should redirect_to(root_path)
-    end
-  end
-
-  describe "Get 'show' for another user" do
-    it "redirects user to root path with access denied" do
-      @user2 = FactoryGirl.create(:user)
-      session[:user_id] = @user.id
-      get 'show', :id => @user2
-      response.should redirect_to(root_path)
-    end
-  end
-
-  describe "GET 'show' for logged in user" do
+  describe "GET 'show'" do
     it "returns http success" do
-      session[:user_id] = @user.id
       get 'show', :id => @user
       response.should be_success
     end
   end
 
   describe "GET edit" do
-    it "returns http success" do
-      session[:user_id] = @user.id
+    it "returns http success if admin" do
+      session[:user_id] = @admin.id
+      puts @user.is_admin?
       get 'edit', :id => @user
       response.should be_success
+    end
+
+    it 'redirects if not admin' do
+      session[:user_id] = @user.id
+      get 'edit', :id => @user
+      response.should be_redirect
     end
   end
 
   describe "PUT update" do
-    it "redirects user to @user" do
+    it "redirects if not admin" do
       session[:user_id] = @user.id
       put 'update', :id => @user, :user => {:name => "ted"}
-      response.should redirect_to(@user)
+      response.should be_redirect
+    end
+
+    it 'redirects to user if admin' do
+      session[:user_id] = @admin.id
+      put 'update', :id => @user, :user => {:name => "ted"}
+      response.should redirect_to(user_path(@user))
     end
   end
 
