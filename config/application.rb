@@ -23,6 +23,9 @@ module Mizzouacm
       g.helper_specs false
     end
 
+    # Precompile everything on heroku
+    config.assets.precompile += %w( *.js *.css *.scss )
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
