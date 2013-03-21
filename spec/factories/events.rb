@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :event do
     name "MyString"
-    date "2013-03-19 18:01:14"
+    date DateTime.tomorrow
     location "MyString"
     description "MyText"
   end
