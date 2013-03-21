@@ -17,7 +17,6 @@ describe UsersController do
   describe "GET edit" do
     it "returns http success if admin" do
       session[:user_id] = @admin.id
-      puts @user.is_admin?
       get 'edit', :id => @user
       response.should be_success
     end
