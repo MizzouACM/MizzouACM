@@ -5,13 +5,13 @@
     %p Insert a lot more mission here.  Insert a lot more mission here.  We want to change the world and hack and do cool stuff.  More mission here.
     %p
   %h2 Upcoming Events
-  .box
+  .box.upcoming-events
     - if user_is_admin?
       %p{:style => 'float: right;'}
         = link_to 'New Event', new_event_path, :style => 'float: right;'
 
-    - unless @events.empty?
-      - @events.each do |event|
+    - unless @upcoming_events.empty?
+      - @upcoming_events.each do |event|
         %p 
           Name:
           = event.name
@@ -31,5 +31,27 @@
     - else
       %p We currently have no upcoming events planned. Check back soon!
 
+  %h2 Past Events
+  .box.past-events
+    - unless @past_events.empty?
+      - @past_events.each do |event|
+        %p 
+          Name:
+          = event.name
+        %p 
+          Description:  
+          = event.description
+        %p 
+          Location:  
+          = event.location       
+        %p
+          Time:
+          = event.date.to_s(:pretty)
+        - if user_is_admin?
+          %p
+            = link_to 'Edit', edit_event_path(event)
+        %hr
+    - else
+      %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
 
 
