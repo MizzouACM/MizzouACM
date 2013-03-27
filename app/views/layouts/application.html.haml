@@ -8,7 +8,7 @@
       #headercenter
         %div{:style => "right: 0px; float: right;"}
           = render 'layouts/user_nav'
-    #gloss
+    #main-header{:class => ('main-header-background' if current_page?(root_path) )}
       = link_to root_path
       #logo
         ACM
@@ -21,9 +21,5 @@
         = nav_link 'Sponsorship', '#'
         = nav_link 'Join ACM', 'https://orgsync.com/47160/chapter'
     #main{:role => "main"}
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
+      = render 'layouts/messages'
+      = yield
