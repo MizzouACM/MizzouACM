@@ -9,19 +9,27 @@
     - if user_is_admin?
       %p{:style => 'float: right;'}
         = link_to 'New Event', new_event_path, :style => 'float: right;'
-    - @events.each do |event|
-      %p 
-        Name:
-        = event.name
-      %p 
-        Description:  
-        = event.description
-      %p 
-        Location:  
-        = event.location       
-      %p
-        Time:
-        = event.date.to_s(:pretty)
-      %hr
+
+    - unless @events.empty?
+      - @events.each do |event|
+        %p 
+          Name:
+          = event.name
+        %p 
+          Description:  
+          = event.description
+        %p 
+          Location:  
+          = event.location       
+        %p
+          Time:
+          = event.date.to_s(:pretty)
+        - if user_is_admin?
+          %p
+            = link_to 'Edit', edit_event_path(event)
+        %hr
+    - else
+      %p We currently have no upcoming events planned. Check back soon!
+
 
 
