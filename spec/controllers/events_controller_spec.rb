@@ -30,7 +30,8 @@ describe EventsController do
       :description => '1337 hackathon',
       :location => 'supersecretspylocation'
     }
- end
+  end
+
 
 
   # This should return the minimal set of values that should be in the session
@@ -50,10 +51,18 @@ describe EventsController do
 
 
   describe "GET index" do
-    it "assigns all events as @events" do
-      event = Event.create! valid_attributes
+
+    let(:upcoming_event) {FactoryGirl.create(:event)}
+    let(:past_event) {FactoryGirl.create(:past_event, :validates => false)}
+
+    it "assigns upcoming events as @upcomingevents" do
       get :index, {}, valid_session
-      assigns(:events).should eq([event])
+      assigns(:upcoming_events).should eq([upcoming_event])
+    end
+
+    it 'assigns past events as @past_events' do
+      get :index, {}, valid_session
+      assigns(:past_events).should eq([past_event])
     end
   end
 
