@@ -53,7 +53,11 @@ describe EventsController do
   describe "GET index" do
 
     let(:upcoming_event) {FactoryGirl.create(:event)}
-    let(:past_event) {FactoryGirl.create(:past_event, :validates => false)}
+    let(:past_event) {
+      e = FactoryGirl.build(:past_event)
+      e.save!(:validate => false)
+      e
+    }
 
     it "assigns upcoming events as @upcomingevents" do
       get :index, {}, valid_session
