@@ -9,10 +9,10 @@
         %div{:style => "right: 0px; float: right;"}
           = render 'layouts/user_nav'
     #main-header{:class => ('main-header-background' if current_page?(root_path) )}
-      = link_to root_path
-      #logo
-        ACM
-        %span.gold MIZZOU
+      %a{:href => root_path}
+        #logo
+          ACM
+          %span.gold MIZZOU
       %ul#menu
         = nav_link 'Home', root_path
         = nav_link 'Projects', '#'
