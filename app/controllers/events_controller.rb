@@ -6,11 +6,17 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+
+    end_of_today = DateTime.now.end_of_day
+    @upcoming_events = Event.where('date > ?', end_of_today)
+    @past_events = Event.where('date < ?', end_of_today)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @events }
+      format.json { render json: {
+        :upcoming_events => @upcoming_events,
+        :past_events => @past_events }
+      }
     end
   end
 
