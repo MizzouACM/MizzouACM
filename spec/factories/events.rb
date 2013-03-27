@@ -6,5 +6,9 @@ FactoryGirl.define do
     date DateTime.tomorrow
     location "MyString"
     description "MyText"
+
+    factory :past_event do
+      date DateTime.yesterday
+    end
   end
 end
