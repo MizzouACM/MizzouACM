@@ -13,6 +13,26 @@
  *= require home
 */
 
+#main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+.center {
+  text-align: center;
+}
+
+.coming-soon {
+  font-size: 30px;
+  text-align: center;
+  color: #666;
+  margin: 40px 0 15px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
 
 .help-inline {
   color: red;
