@@ -14,8 +14,7 @@
 
     - unless @upcoming_events.empty?
       - @upcoming_events.each do |event|
-        %p 
-          Name:
+        %p.event-title
           = event.name
         %p 
           Description:  
@@ -37,8 +36,7 @@
   .box.past-events
     - unless @past_events.empty?
       - @past_events.each do |event|
-        %p 
-          Name:
+        %p.event-title
           = event.name
         %p 
           Description:  
