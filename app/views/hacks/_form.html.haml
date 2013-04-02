@@ -1,0 +1,11 @@
+= simple_form_for(@hack) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :source
+    = f.input :demo
+    = f.input :description
+
+  .form-actions
+    = f.button :submit
