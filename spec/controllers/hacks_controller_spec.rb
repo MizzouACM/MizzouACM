@@ -24,7 +24,10 @@ describe HacksController do
   # Hack. As you add validations to Hack, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { 
+      "name" => "MyString",
+      "description" => "Describe"
+    }
   end
 
   # This should return the minimal set of values that should be in the session
