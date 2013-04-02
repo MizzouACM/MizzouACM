@@ -1,25 +1,4 @@
-%h1 Listing hacks
-
-%table
-  %tr
-    %th Name
-    %th Source
-    %th Demo
-    %th Description
-    %th
-    %th
-    %th
-
-  - @hacks.each do |hack|
-    %tr
-      %td= hack.name
-      %td= hack.source
-      %td= hack.demo
-      %td= hack.description
-      %td= link_to 'Show', hack
-      %td= link_to 'Edit', edit_hack_path(hack)
-      %td= link_to 'Destroy', hack, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Hack', new_hack_path
+#hack-wrapper
+  %h2.intro Here is what we've been up to
+  .middle
+    = render :partial => 'hacks', :locals => { :hacks => @hacks }
