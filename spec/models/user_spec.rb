@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe User do
+
+  it { should have_and_belong_to_many(:hacks) }
+
   describe '#is_admin?' do
 
     let(:user) { FactoryGirl.create(:user) }
