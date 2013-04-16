@@ -19,10 +19,9 @@ $gold: #FFD700;
 #main {
   margin: auto;
   width: 960px;
-}
-
-#main a {
-  font-weight: bold;
+  a {
+    font-weight: bold;
+  }
 }
 
 .center {
@@ -79,7 +78,6 @@ html, body {
 }
 
 body{
-  margin: 0px;
   background-color: #fff;
   font-size: 18px;
   line-height: 25px;
@@ -131,10 +129,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border-radius: 2px;
   text-align: center;
   text-shadow: 1px 1px 2px #111;
-}
-
-.nav > a {
-  color: white;
+  > a {
+    color: white;
+  }
 }
 
 .main-header-background {
@@ -166,31 +163,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 20px;
   text-align: center;
   overflow: hidden;
-}
 
-#menu li > a {
-  display: inline-block;
-  color: #fff;
-  padding: 16px 20px;
-}
+  a:hover {
+    color: $gold;
+  }
 
-#menu li.current > a {
-  color: $gold;
+  li {
+    > a {
+      display: inline-block;
+      color: #fff;
+      padding: 16px 20px;
+    }
+    
+    &.current > a {
+      color:$gold;
+    }
+  }
 }
 
 ul#menu {
   list-style-type:none;
   margin:0;
   padding:0;
-}
-
-ul#menu > li {
-  display: inline;
-}
-
-#menu a:hover
-{
-  color: $gold;
+  > li {
+    display: inline;
+  }
 }
 
 .gold {
