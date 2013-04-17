@@ -8,8 +8,8 @@ class EventsController < ApplicationController
   def index
 
     start_of_today = DateTime.now.beginning_of_day
-    @upcoming_events = Event.where('date >= ?', start_of_today)
-    @past_events = Event.where('date < ?', start_of_today)
+    @upcoming_events = Event.where('date >= ?', start_of_today).order('date ASC')
+    @past_events = Event.where('date < ?', start_of_today).order('date DESC')
 
     respond_to do |format|
       format.html # index.html.erb
