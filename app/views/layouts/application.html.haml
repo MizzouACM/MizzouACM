@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    = stylesheet_link_tag "brendon", :media => "all"
+    = stylesheet_link_tag "application", :media => "all"
     %link{:href => "MyFontsWebfontsKit/MyFontsWebfontsKit.css", :rel => "stylesheet", :type => "text/css"}
   %body.body
     #top-header
@@ -15,9 +15,10 @@
           %span.gold MIZZOU
       %ul#menu
         = nav_link 'Home', root_path
-        = nav_link 'Projects', '/projects'
+        = nav_link 'Projects', hacks_path
         = nav_link 'Events', events_path
         = nav_link 'People', '/people'
+        = nav_link 'Facebook', 'https://www.facebook.com/groups/MizzouACM/?fref=ts'
         = nav_link 'Join ACM', 'https://orgsync.com/47160/chapter'
     #main{:role => "main"}
       = render 'layouts/messages'
