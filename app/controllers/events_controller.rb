@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
 
-    start_of_today = DateTime.now.beginning_of_day
+    start_of_today = Time.current.beginning_of_day
     @upcoming_events = Event.where('date >= ?', start_of_today).order('date ASC')
     @past_events = Event.where('date < ?', start_of_today).order('date DESC')
 
