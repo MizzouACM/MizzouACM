@@ -29,6 +29,7 @@ group :production do
   gem 'newrelic_rpm'
 end
 
+gem 'redcarpet'
 gem 'jquery-rails'
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development

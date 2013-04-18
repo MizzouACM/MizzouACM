@@ -1,3 +1,4 @@
+-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
 #event-wrapper
   %h1 Come learn with us!
   .box
@@ -17,7 +18,7 @@
         %p.event-title
           = event.name
         %p 
-          = event.description
+          != markdown.render(event.description)
         %p 
           Location:  
           = event.location       
@@ -39,7 +40,7 @@
           = event.name
         %p 
           Description:  
-          = event.description
+          != markdown.render(event.description)
         %p 
           Location:  
           = event.location       
