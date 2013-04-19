@@ -27,6 +27,11 @@
     box-shadow: 1px 1px 3px #aaa;
   }
 
+  .event-title:hover {
+    color: #FFD700;
+    cursor: pointer;
+  }
+
   p {
     margin: 8px 0;
     font-family: 'Open Sans', sans-serif;
@@ -38,6 +43,23 @@
   .event-title {
     font-weight: bold;
     font-size: 22px;
+  }
+
+  .upcoming-events{
+    padding-right: 195 px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 10px solid #333;
+  }
+
+  .past-events {
+    opacity: 0.9;
+  }
+
+  .small {
+    font-size: 14px;
   }
 
 }
