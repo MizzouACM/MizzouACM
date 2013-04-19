@@ -17,10 +17,10 @@
           = event.name
         %p 
           != @markdown.render(event.description)
-        .small
+        %p.small
           Location:  
           = event.location       
-        .small
+        %p.small
           Time:
           = event.date.to_s(:pretty)
         - if user_is_admin?
@@ -37,10 +37,10 @@
           = event.name
         %p 
           != @markdown.render(event.description)
-        .small 
+        %p.small 
           Location:  
           = event.location       
-        .small
+        %p.small
           Time:
           = event.date.to_s(:pretty)
         - if user_is_admin?
