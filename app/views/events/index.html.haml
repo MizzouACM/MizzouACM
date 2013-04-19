@@ -6,31 +6,28 @@
       If you're up for learning how to grapple with the latest tech, we encourage you to join us.
       Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
     %p Have a cool technology or project you'd like to share?  Drop us a line.
-  %h2 Upcoming Events
-  .box.upcoming-events
-    - if user_is_admin?
-      %p{:style => 'float: right;'}
-        = link_to 'New Event', new_event_path, :style => 'float: right;'
-
-    - unless @upcoming_events.empty?
-      - @upcoming_events.each do |event|
-        %p.event-title
+  %h2.facebook_link Upcoming Events
+  - if user_is_admin?
+    %p{:style => 'float: right;'}
+      = link_to 'New Event', new_event_path, :style => 'float: right;'
+  - unless @upcoming_events.empty?
+    - @upcoming_events.each do |event|
+      .box.upcoming-events
+        %a.event-title
           = event.name
         %p 
-          Description:  
           = event.description
-        %p 
+        .small
           Location:  
           = event.location       
-        %p
+        .small
           Time:
           = event.date.to_s(:pretty)
         - if user_is_admin?
           %p
             = link_to 'Edit', edit_event_path(event)
-        %hr
-    - else
-      %p We currently have no upcoming events planned. Check back soon!
+  - else
+    %p We currently have no upcoming events planned. Check back soon!
 
   %h2 Past Events
   .box.past-events
@@ -41,16 +38,15 @@
         %p 
           Description:  
           = event.description
-        %p 
+        .small 
           Location:  
           = event.location       
-        %p
+        .small
           Time:
           = event.date.to_s(:pretty)
         - if user_is_admin?
           %p
             = link_to 'Edit', edit_event_path(event)
-        %hr
     - else
       %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
 
