@@ -7,6 +7,16 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
 
+    # Markdown renderer for the event descriptions.
+    # May want to eventually make this into a presave hook for Event model
+    # to save it as description_rendered or something.  
+    # That way it isn't rendering on each page load.
+    @markdown = Redcarpet::Markdown.new(
+      Redcarpet::Render::HTML,
+      :autolink => true,
+      :space_after_headers => true)
+
+
     start_of_today = Time.current.beginning_of_day
     @upcoming_events = Event.where('date >= ?', start_of_today).order('date ASC')
     @past_events = Event.where('date < ?', start_of_today).order('date DESC')
