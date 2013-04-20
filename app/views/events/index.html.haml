@@ -13,8 +13,7 @@
   - unless @upcoming_events.empty?
     - @upcoming_events.each do |event|
       .box.upcoming-events
-        %a.event-title
-          = event.name
+        = link_to event.name, event.facebook_link, :class => 'event-title'
         %p 
           != @markdown.render(event.description)
         %p.small
@@ -33,8 +32,7 @@
   .box.past-events
     - unless @past_events.empty?
       - @past_events.each do |event|
-        %p.event-title
-          = event.name
+        = link_to event.name, event.facebook_link, :class => 'event-title'
         %p 
           != @markdown.render(event.description)
         %p.small 
