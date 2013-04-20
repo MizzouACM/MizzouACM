@@ -2,11 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$gold: #FFD700;
 
 #event-wrapper {
   margin-bottom: 50px;
   width: 820px;
   margin: 0 auto;
+
+
+  a:hover {
+    color: $gold;
+  }
 
   h1, h2, h3 {
     text-align: center;
