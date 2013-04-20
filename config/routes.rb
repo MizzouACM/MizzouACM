@@ -1,6 +1,4 @@
 Mizzouacm::Application.routes.draw do
-  resources :hacks
-
 
   resources :events
 
