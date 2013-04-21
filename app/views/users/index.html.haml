@@ -1,16 +1,16 @@
-=stylesheet_link_tag "users", :media => "all"
-.title ACM Members
-%ul.ch-grid
-	- @users.each do |user|
-		-hash = Digest::MD5.hexdigest(user.email.downcase)
-		-image_src= "http://www.gravatar.com/avatar/#{hash}?s=160"
-		%li
-			.ch-item
-				.ch-info
-					-#%a{:href=>"users/"+user.id.to_s}
-					-#=image_tag(image_src)
-					%h3= user.name
-					%p
-						Joined #{user.created_at.to_date}
-						=link_to "View on GitHub", ("http://github.com/"+user.github_username)
-				.ch-thumb{:style=>"background-image: url("+image_src+")"}
+#user-wrapper
+	.title ACM Members
+	%ul.ch-grid
+		- @users.each do |user|
+			-hash = Digest::MD5.hexdigest(user.email.downcase)
+			-image_src= "http://www.gravatar.com/avatar/#{hash}?s=160"
+			%li
+				.ch-item
+					.ch-info
+						-#%a{:href=>"users/"+user.id.to_s}
+						-#=image_tag(image_src)
+						%h3= user.name
+						%p
+							Joined #{user.created_at.to_date}
+							=link_to "View on GitHub", ("http://github.com/"+user.github_username)
+					.ch-thumb{:style=>"background-image: url("+image_src+")"}
