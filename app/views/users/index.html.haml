@@ -5,7 +5,7 @@
 		.user
 			-hash = Digest::MD5.hexdigest(user.email.downcase)
 			-image_src= "http://www.gravatar.com/avatar/#{hash}"
-			%a{:href=>"user/"+user.id.to_s}
+			%a{:href=>"users/"+user.id.to_s}
 				=image_tag(image_src)
 			=link_to user.name, user
 			.joined Joined #{user.created_at.to_date}
