@@ -15,7 +15,7 @@
       .box.upcoming-events
         = link_to event.name, event.facebook_link, :class => 'event-title'
         %p 
-          != @markdown.render(event.description)
+          != event.rendered_description
         %p.small
           Location:  
           = event.location       
@@ -34,7 +34,7 @@
       - @past_events.each do |event|
         = link_to event.name, event.facebook_link, :class => 'event-title'
         %p 
-          != @markdown.render(event.description)
+          != event.rendered_description
         %p.small 
           Location:  
           = event.location       
