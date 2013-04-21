@@ -22,4 +22,9 @@ class User < ActiveRecord::Base
     'https://github.com/' + github_username
   end
 
+  def gravatar_url(size = 160)
+    hash = Digest::MD5.hexdigest(email.downcase)
+    "http://www.gravatar.com/avatar/#{hash}?s=#{size}"
+  end
+
 end

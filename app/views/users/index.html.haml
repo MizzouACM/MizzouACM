@@ -2,8 +2,6 @@
 	.title ACM Members
 	%ul.ch-grid
 		- @users.each do |user|
-			-hash = Digest::MD5.hexdigest(user.email.downcase)
-			-image_src= "http://www.gravatar.com/avatar/#{hash}?s=160"
 			%li
 				.ch-item
 					.ch-info
@@ -13,4 +11,4 @@
 						%p
 							Joined #{user.created_at.to_date}
 							=link_to "View on GitHub", user.github_url
-					.ch-thumb{:style=>"background-image: url("+image_src+")"}
+					.ch-thumb{:style=>"background-image: url(#{user.gravatar_url})"}
