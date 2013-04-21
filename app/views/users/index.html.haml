@@ -12,5 +12,5 @@
 						%h3= user.name
 						%p
 							Joined #{user.created_at.to_date}
-							=link_to "View on GitHub", ("http://github.com/"+user.github_username)
+							=link_to "View on GitHub", user.github_url
 					.ch-thumb{:style=>"background-image: url("+image_src+")"}
