@@ -7,7 +7,7 @@
 					.ch-info
 						-#%a{:href=>"users/"+user.id.to_s}
 						-#=image_tag(image_src)
-						%h3= user.name
+						%h3= user.display_name
 						%p
 							Joined #{user.created_at.to_date}
 							=link_to "View on GitHub", user.github_url

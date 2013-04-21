@@ -27,4 +27,11 @@ class User < ActiveRecord::Base
     "http://www.gravatar.com/avatar/#{hash}?s=#{size}"
   end
 
+  # Not everyone has their actual name set in GitHub,
+  # So sometimes name is empty.
+  # So this method gets name if it exists, or the github name if not
+  def display_name
+    name || github_username
+  end
+
 end
