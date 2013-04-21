@@ -31,7 +31,11 @@ class User < ActiveRecord::Base
   # So sometimes name is empty.
   # So this method gets name if it exists, or the github name if not
   def display_name
-    name || github_username
+    if name.blank?
+      github_username
+    else
+      name
+    end
   end
 
 end
