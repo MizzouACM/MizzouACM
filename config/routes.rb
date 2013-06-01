@@ -1,5 +1,8 @@
 Mizzouacm::Application.routes.draw do
 
+  resources :projects
+
+
   resources :events
 
 
