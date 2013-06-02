@@ -1,3 +1,28 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#main {
+	width: auto;
+}
+.project {
+	margin: 15px;
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+}
+.project img {
+	margin: 0px auto;
+	display: block;
+}
+.textFrame {
+	background: #f9f9f9;
+	color: #333;
+	padding: 14px 10px;
+	border-bottom: 1px solid #eee;
+	margin: 0px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	text-align: center;
+	font-weight: normal;
+}

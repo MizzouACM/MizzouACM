@@ -1,25 +1,11 @@
-%h1 Listing projects
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th User
-    %th Link
-    %th
-    %th
-    %th
-
+%h1.title Projects
+#projects
   - @projects.each do |project|
-    %tr
-      %td= project.title
-      %td= project.description
-      %td= project.user
-      %td= project.link
-      %td= link_to 'Show', project
-      %td= link_to 'Edit', edit_project_path(project)
-      %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+    .project
+      = link_to project do
+        = image_tag project.photo.url(:thumb)
+        .textFrame
+          = project.title + ' by ' + project.user.name
 %br
 
 = link_to 'New Project', new_project_path
