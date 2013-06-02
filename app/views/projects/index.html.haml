@@ -1,4 +1,8 @@
-%h1.title Projects
+- if user_signed_in?
+  = link_to 'Submit a Project', new_project_path, :class=>'btn btn-large pull-right'
+- else
+  %a.btn.pull-right.btn-large{:disabled => true} Sign in to Submit a Project
+%h1 ACM Member Projects
 #projects
   - @projects.each do |project|
     .project
@@ -8,4 +12,3 @@
           = project.title + ' by ' + project.user.name
 %br
 
-= link_to 'New Project', new_project_path

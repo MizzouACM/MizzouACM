@@ -1,23 +1,9 @@
-#home-wrapper
-  %h2.intro Resources For Students
-  .event
-    %a{:href => "/opencourse"}
-      .eventimage{:style => "background-image: url(#{image_path('temp.jpg')});"}
-      .eventtitle
-        %h1 OpenCourse
-        %p Foundations to Mizzou CS Lectures
-  .event
-    %a{:href => "/resources"}
-      .eventimage{:style => "background-image: url(#{image_path('resources.jpg')});"}
-      .eventtitle
-        %h1 Programming Resources
-        %p Resources for Various Topics
-  .event
-    %a{:href => "/career"}
-      .eventimage{:style => "background-image: url(#{image_path('networking1.jpg')});"}
-      .eventtitle
-        %h1 Career and Networking
-        %p Resume tips, Interview help
-
-  - @feed.each do |activity|
-    =render_activity(activity)
+.hero-unit
+  %h1 Come learn with us!
+  %p ACM Mizzou is on a mission to make Mizzou hackers awesome!
+  %p 
+    If you're up for learning how to grapple with the latest tech, we encourage you to join us.
+    Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
+%p Have a cool technology or project you'd like to share?  Drop us a line.
+- @feed.each do |activity|
+  =render_activity(activity)

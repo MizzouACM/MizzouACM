@@ -1,18 +1,12 @@
+- if user_is_admin?
+  = link_to 'New Event', new_event_path, :class => 'btn btn-large pull-right'
+%h2 Upcoming Events
 #event-wrapper
-  .title Come learn with us!
-  .box
-    %p ACM Mizzou is on a mission to make Mizzou hackers awesome!
-    %p 
-      If you're up for learning how to grapple with the latest tech, we encourage you to join us.
-      Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
-    %p Have a cool technology or project you'd like to share?  Drop us a line.
-  .facebook_link.title Upcoming Events
-  - if user_is_admin?
-    %p{:style => 'float: right;'}
-      = link_to 'New Event', new_event_path, :style => 'float: right;'
   - unless @upcoming_events.empty?
     - @upcoming_events.each do |event|
       .box.event
+        - if user_is_admin?
+          = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
         = link_to event.name, event.facebook_link, :class => 'event-title'
         %p 
           != event.rendered_description
@@ -22,17 +16,17 @@
         %p.small
           Time:
           = event.date.to_s(:pretty)
-        - if user_is_admin?
-          %p
-            = link_to 'Edit', edit_event_path(event)
   - else
     %p We currently have no upcoming events planned. Check back soon!
 
-  .title Past Events
+%h2 Past Events
+#event-wrapper
   .past-events
     - unless @past_events.empty?
       - @past_events.each do |event|
         .box.event
+          - if user_is_admin?
+            = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
           = link_to event.name, event.facebook_link, :class => 'event-title'
           %p 
             != event.rendered_description
@@ -42,9 +36,6 @@
           %p.small
             Time:
             = event.date.to_s(:pretty)
-          - if user_is_admin?
-            %p
-              = link_to 'Edit', edit_event_path(event)
     - else
       %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
 
