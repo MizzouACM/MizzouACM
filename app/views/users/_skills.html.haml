@@ -2,7 +2,7 @@
 %h4 Skills
 
 %ul
-  -@user.skills.each do |skill|
+  -@user.skills.reject(&:new_record?).each do |skill|
     %li=skill.name
 
 %h5 Add a new skill
