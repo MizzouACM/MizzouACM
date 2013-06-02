@@ -1,19 +1,19 @@
-%p#notice= notice
+- if user_is_admin? or current_user == @project.user
+  = link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-large pull-right'
+%h1=@project.title
 
-%p
-  %b Title:
-  = @project.title
-=image_tag @project.photo.url(:large)
-%p
-  %b Description:
-  = @project.description
-%p
-  %b User:
-  = @project.user
-%p
-  %b Link:
-  = @project.link
-
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+.row
+  .span8
+    =image_tag @project.photo.url(:large)
+  .span4
+    .well
+      %strong
+        ="Posted by "
+        =link_to @project.user.name, @project.user
+      .links
+        -if @project.link 
+          = link_to 'Demo', @project.link
+        -if @project.link
+          = link_to 'Source Code', @project.link
+      %hr
+      = @project.description

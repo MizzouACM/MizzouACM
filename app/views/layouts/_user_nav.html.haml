@@ -1,8 +1,0 @@
-- if user_signed_in?
-  .nav.link.github
-    = "Logged in as #{current_user.name}"
-  .nav.link.github
-    = link_to 'Logout', signout_path
-- else
-  .nav.link.github
-    = link_to 'Sign in with GitHub', signin_path
