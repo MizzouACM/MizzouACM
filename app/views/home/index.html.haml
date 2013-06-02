@@ -18,3 +18,6 @@
       .eventtitle
         %h1 Career and Networking
         %p Resume tips, Interview help
+
+  - @feed.each do |activity|
+    =render_activity(activity)
