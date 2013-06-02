@@ -3,7 +3,9 @@
 
 %ul
   -@user.skills.reject(&:new_record?).each do |skill|
-    %li=skill.name
+    %li
+      =Skill.getIcon(skill.name)
+      =skill.name
 
 - if user_is_current_user?
   %h5 Add a new skill
