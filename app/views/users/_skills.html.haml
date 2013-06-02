@@ -1,0 +1,16 @@
+
+%h4 Skills
+
+%ul
+  -@user.skills.each do |skill|
+    %li=skill.name
+
+%h5 Add a new skill
+= simple_form_for([@user, @new_skill]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+
+  .form-actions
+    = f.button :submit

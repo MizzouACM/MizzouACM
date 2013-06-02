@@ -21,6 +21,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    # Must create the new skill for the form this way,
+    # otherwise it is added as an empty skill to @user.skills
+    @new_skill = Skill.new
+    @new_skill.user_id = @user.id
   end
 
 end
