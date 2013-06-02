@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602081254) do
+ActiveRecord::Schema.define(:version => 20130602182727) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -27,13 +27,15 @@ ActiveRecord::Schema.define(:version => 20130602081254) do
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.string   "link"
+    t.string   "source_link"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "Demo"
+    t.string   "demo_link"
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"

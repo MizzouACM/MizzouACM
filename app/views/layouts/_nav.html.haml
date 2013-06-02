@@ -5,10 +5,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      .brand{:href=>"#Project name"} Mizzou ACM
+      =link_to 'Mizzou ACM', root_path, :class=>"brand"
       .nav-collapse.collapse
         %ul.nav
-          =nav_link 'Home', root_path
           =nav_link 'Projects', '/projects'
           =nav_link 'Events', events_path
           =nav_link 'People', '/users'
@@ -18,7 +17,9 @@
           %ul.nav
             - if user_signed_in?
               %li
-                %a="Logged in as #{current_user.name}"
+                = link_to current_user, {:style=> 'padding: 0px;'} do
+                  %img{:src=>current_user.gravatar_url, :id=>'nav-gravatar'}
+              %li= link_to current_user.name, current_user
               %li= link_to 'Logout', signout_path
             - else
               = link_to 'Sign in with GitHub', signin_path, :class=>"btn btn-small btn-success"

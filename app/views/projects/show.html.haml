@@ -11,10 +11,10 @@
         ="Posted by "
         =link_to @project.user.name, @project.user
       .links
-        -if @project.link?
-          = link_to 'Demo', @project.link
-        -if @project.link?
-          = link_to 'Source Code', @project.link
+        -if @project.demo_link?
+          = link_to 'Demo', @project.demo_link
+        -if @project.source_link?
+          = link_to 'Source Code', @project.source_link
       -if @project.description?
         %hr
         = @project.description
