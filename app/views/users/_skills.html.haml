@@ -2,10 +2,8 @@
 %h4 Skills
 
 %ul
-  -@user.skills.reject(&:new_record?).each do |skill|
-    %li
-      =Skill.getIcon(skill.name)
-      =skill.name
+  -@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
+    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
 
 - if user_is_current_user?
   %h5 Add a new skill

@@ -3,7 +3,27 @@ class Skill < ActiveRecord::Base
   attr_accessible :name
   validates :name, :uniqueness => {:scope => 'user_id', :message=> 'You cannot add the same skill twice.'}
   def self.valid_skills
-    {'Web Dev'=>"web.png", 'C++'=>"cplusplus.png", 'JavaScript'=>"js.png"}
+    {
+    'Android' => "android.png",
+    'Apple' => "apple.jpg",
+    'C' => "c.png",
+    'C++' => "CPlusPlus.jpg",
+    'CSS' => "css.png",
+    'Drupal' => "drupal.png",
+    'Firefox' => "firefox.png",
+    'Google Chrome' => "chrome.jpg",
+    'HTML' => "html.png",
+    'Java' => "java.png",
+    'jQuery' => "jQuery.png",
+    'Linux' => "linux.jpg",
+    'Node.js' => "nodejs.png",
+    'PHP' => "php.jpg",
+    'Python' => "python.png",
+    'Ruby on Rails' => "rails.png",
+    'Ruby' => "ruby.png",
+    'Windows' => "windows.png",
+    'Wordpress' => "wordpress.png"
+  }
   end
 
   def self.valid_skills_dropdown
