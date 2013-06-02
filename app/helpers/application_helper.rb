@@ -13,7 +13,7 @@ module ApplicationHelper
     content_tag(:p) do
       case activity
       when User
-          activity.name + " joined!"
+        activity.name + " joined!"
       when Event
         activity.name + " announced!"
       when Project
