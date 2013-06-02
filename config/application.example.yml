@@ -7,8 +7,12 @@
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 # Add application configuration variables here, as shown below.
 #
-ADMIN_NAME: First User
-ADMIN_EMAIL: user@example.com
-ADMIN_PASSWORD: changeme
-OMNIAUTH_PROVIDER_KEY: Your_OmniAuth_Provider_Key
-OMNIAUTH_PROVIDER_SECRET: Your_OmniAuth_Provider_Secret
+# These variables can all be added to heroku by running:
+# rake figaro:heroku
+
+
+# Stuff you'll need to add to develop locally (contact one of the other devs):
+
+# AWS Keys:
+access_key_id: putyouridhere!
+secret_access_key: hunter2
