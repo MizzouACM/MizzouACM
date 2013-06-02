@@ -11,9 +11,9 @@
         ="Posted by "
         =link_to @project.user.name, @project.user
       .links
-        -if @project.link 
+        -if @project.link?
           = link_to 'Demo', @project.link
-        -if @project.link
+        -if @project.link?
           = link_to 'Source Code', @project.link
       %hr
       = @project.description
