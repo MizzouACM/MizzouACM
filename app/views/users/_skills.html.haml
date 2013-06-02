@@ -5,12 +5,13 @@
   -@user.skills.reject(&:new_record?).each do |skill|
     %li=skill.name
 
-%h5 Add a new skill
-= simple_form_for([@user, @new_skill]) do |f|
-  = f.error_notification
+- if user_is_current_user?
+  %h5 Add a new skill
+  = simple_form_for([@user, @new_skill]) do |f|
+    = f.error_notification
 
-  .form-inputs
-    = f.input :name, collection: Skill.valid_skills_dropdown, default: 1
+    .form-inputs
+      = f.input :name, collection: Skill.valid_skills_dropdown, default: 1, label: false
 
-  .form-actions
-    = f.button :submit
+    .form-actions
+      = f.button :submit

@@ -1,4 +1,7 @@
 class SkillsController < ApplicationController
+
+  before_filter :user_must_be_current_user
+
   def create
     @user = User.find(params[:user_id])
     @new_skill = @user.skills.new(params[:skill])
