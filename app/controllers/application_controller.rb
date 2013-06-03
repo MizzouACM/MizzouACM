@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   private
     def current_user
       begin
-        puts session[:user_id]
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
       rescue Exception => e
         puts e
@@ -33,8 +32,6 @@ class ApplicationController < ActionController::Base
 
     def user_is_current_user?
       @user ||= User.find(params[:user_id])
-      puts "1"+current_user.to_s
-      puts "2"+@user.to_s
       return current_user == @user
     end
 
