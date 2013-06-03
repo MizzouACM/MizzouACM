@@ -8,7 +8,7 @@ Mizzouacm::Application.routes.draw do
 
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ] do
-    resources :skills, :only => [:create]
+    resources :skills, :only => [:create, :destroy]
   end
   
   match '/auth/:provider/callback' => 'sessions#create'

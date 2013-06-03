@@ -3,8 +3,9 @@
 
 %ul
   -@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
-    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
-
+    .user-skill-wrapper
+      =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
+      =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"
 - if user_is_current_user?
   %h5 Add a new skill
   = simple_form_for([@user, @new_skill]) do |f|

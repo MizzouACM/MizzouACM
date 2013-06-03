@@ -36,6 +36,7 @@ gem "html2haml", ">= 1.0.1", :group => :development
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'aws-sdk'
 gem 'aws-s3'
+gem 'thin'
 
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "omniauth", ">= 1.1.3"
