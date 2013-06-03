@@ -1,17 +1,13 @@
 
 %h4 Skills
--@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
-  .user-skill-wrapper
-    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
-    - if user_is_current_user?
-      =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"
 - if user_is_current_user?
-  %h5 Add a new skill
   = simple_form_for([@user, @new_skill]) do |f|
     = f.error_notification
 
     .form-inputs
       = f.input :name, collection: Skill.valid_skills_dropdown(@user), default: 1, label: false
-
-    .form-actions
-      = f.button :submit, "Add Skill"
+-@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
+  .user-skill-wrapper
+    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
+    - if user_is_current_user?
+      =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"
