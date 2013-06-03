@@ -26,8 +26,8 @@ class Skill < ActiveRecord::Base
   }
   end
 
-  def self.valid_skills_dropdown
-    ['Select a new skill to add'] + valid_skills_keys
+  def self.valid_skills_dropdown(user)
+    ['Select a new skill to add'] + valid_skills_keys.select { |s| user.skills.find(:all, :conditions => "name = '#{s}'").empty?}
   end
   def self.valid_skills_keys
   	self.valid_skills.keys
