@@ -6,7 +6,7 @@ class SkillsController < ApplicationController
     @user = User.find(params[:user_id])
     @new_skill = @user.skills.new(params[:skill])
     if @new_skill.save
-      flash[:success] = 'Skill was successfully added.'
+      flash[:success] = "#{@new_skill.name} was successfully added to your skills."
       redirect_to @user
     else
       render 'users/show'
@@ -15,7 +15,9 @@ class SkillsController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     skill = user.skills.find(params[:id])
-    skill.destroy
+    if skill.destroy
+      flash[:alert] = "#{skill.name} has been removed from your skills."
+    end
     redirect_to user
   end
 end
