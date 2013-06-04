@@ -1,6 +1,9 @@
 
 %h4 Skills
+- if !user_is_current_user? and @user.skills.length < 2
+  %p This user has not posted their skills yet.
 - if user_is_current_user?
+  .help-block You can add skills to your profile to let other ACM members know what you're proficient in.
   = simple_form_for([@user, @new_skill]) do |f|
     = f.error_notification
 

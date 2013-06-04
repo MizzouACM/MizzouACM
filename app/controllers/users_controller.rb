@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.skills.empty? and user_is_current_user?
+      flash[:info] = "It's not cool to have an empty profile! Post your skills!"
+    end
     @new_skill = @user.skills.build
   end
 

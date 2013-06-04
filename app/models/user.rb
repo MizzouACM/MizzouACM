@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :skills, :dependent => :destroy
   
-
+  def randomSkills(n)
+    skills.sample(n).map { |e| Skill.getIcon(e.name) }
+  end
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']
