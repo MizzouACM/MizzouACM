@@ -1,9 +1,28 @@
-.hero-unit
-  %h1 Come learn with us!
-  %p ACM Mizzou is on a mission to make Mizzou hackers awesome!
-  %p 
-    If you're up for learning how to grapple with the latest tech, we encourage you to join us.
-    Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
-%p Have a cool technology or project you'd like to share?  Drop us a line.
-- @feed.each do |activity|
-  =render_activity(activity)
+%link{:href=>"http://fonts.googleapis.com/css?family=Anton", :rel=>'stylesheet'}
+.wrapper.container
+  .row-fluid
+    .span6
+      %h2.sentence
+        %span= link_to 'What', '#'
+        %span if there was a
+        %span
+          %a club
+        %span whose
+        %span= link_to 'members', users_path
+        =link_to projects_path do
+          %span.rotating
+            %span created
+            %span hacked*
+            %span invented
+            %span shared
+        %span{:style=>'margin-left: 199px'} what they want?
+        %br
+        %br
+        %span{:style=>'margin-right: 25px'} There already is.
+        .btn-holder
+          %button.btn.btn-large.btn-teal More Information
+//If you're up for learning how to grapple with the latest tech, we encourage you to join us.
+//Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
+//%p Have a cool technology or project you'd like to share?  Drop us a line.
+//- @feed.each do |activity|
+//=render_activity(activity)

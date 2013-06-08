@@ -7,14 +7,42 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap_and_overrides
  *= require events
  *= require home
  *= require users
  *= require projects
+ *= require_self
  */
+
+$teal1: rgb(44, 133, 133)
+$teal2: rgb(31, 97, 97)
+
+body
+  background: url('/assets/bg1.jpg')
+  background-size: cover
+
 #nav-gravatar
   width: 33px
   border-radius: 4px
   margin-top: 4px
+
+.btn-teal
+  color: white
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+  background-color: rgba(44, 133, 133, 0.96)
+  background-image: -moz-linear-gradient(top, $teal1, $teal2)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($teal1), to(teal2))
+  background-image: -webkit-linear-gradient(top, $teal1, $teal2)
+  background-image: -o-linear-gradient(top, $teal1, $teal2)
+  background-image: linear-gradient(to bottom, $teal1, $teal2)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5BC0DE', endColorstr='#FF2F96B4', GradientType=0)
+  border-color: $teal2 $teal2 #1f6377
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+
+.btn-teal:hover, .btn-teal:focus, .btn-teal:active, .btn-teal.active, .btn-teal.disabled, .btn-teal[disabled]
+  color: white
+  background-color: $teal2

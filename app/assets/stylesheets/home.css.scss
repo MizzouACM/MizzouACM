@@ -1,0 +1,141 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$primaryLinks: rgb(44, 133, 133);
+.span6, .span3 {
+  background: rgba(255, 255, 255, 0.68);
+  padding: 20px;
+  border-radius: 10px;
+}
+.primary-links {
+  color: $primaryLinks;
+}
+.acm-title {
+  transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  -webkit-transform: rotate(6deg);
+  font-size: 6.15em;
+  color: rgba(41, 40, 40, 0.81);
+  margin-top: 5%;
+}
+
+.wrapper{
+  font-family: 'Anton', sans-serif;
+  .btn.btn-teal {
+    margin-top: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+.wrapper a {
+  color: $primaryLinks;
+}
+.sentence{
+  margin: 0;
+  font-weight: 100;
+}
+.sentence span{
+  text-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+}
+.sentence {
+  font-size: 384%;
+  color: rgba(56, 57, 63, 0.9);
+  line-height: 1.1em;
+}
+.rotating{
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+}
+.rotating span{
+  position: absolute;
+  text-shadow: 0px 0px 80px rgba(255,255,255,1);
+  opacity: 0;
+  -webkit-animation: rotateWord 12s linear infinite 0s;
+  -moz-animation: rotateWord 12s linear infinite 0s;
+  -o-animation: rotateWord 12s linear infinite 0s;
+  -ms-animation: rotateWord 12s linear infinite 0s;
+  animation: rotateWord 12s linear infinite 0s;
+}
+.rotating span:nth-child(2) { 
+    -webkit-animation-delay: 3s; 
+  -moz-animation-delay: 3s; 
+  -o-animation-delay: 3s; 
+  -ms-animation-delay: 3s; 
+  animation-delay: 3s; 
+}
+.rotating span:nth-child(3) { 
+    -webkit-animation-delay: 6s; 
+  -moz-animation-delay: 6s; 
+  -o-animation-delay: 6s; 
+  -ms-animation-delay: 6s; 
+  animation-delay: 6s; 
+}
+.rotating span:nth-child(4) { 
+    -webkit-animation-delay: 9s;
+  -moz-animation-delay: 9s; 
+  -o-animation-delay: 9s; 
+  -ms-animation-delay: 9s; 
+  animation-delay: 9s; 
+}
+.rotating span:nth-child(5) { 
+    -webkit-animation-delay: 12s; 
+  -moz-animation-delay: 12s; 
+  -o-animation-delay: 12s; 
+  -ms-animation-delay: 12s; 
+  animation-delay: 12s; 
+}
+.rotating span:nth-child(6) { 
+    -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s; 
+  -o-animation-delay: 15s; 
+  -ms-animation-delay: 15s; 
+  animation-delay: 15s; 
+}
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; -webkit-animation-timing-function: ease-in; -webkit-transform: translateY(-200px) translateZ(300px) rotateY(-120deg); }
+    5% { opacity: 1; -webkit-animation-timing-function: ease-out; -webkit-transform: translateY(0px) translateZ(0px) rotateY(0deg); }
+    6% { text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    17% { opacity: 1; text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-moz-keyframes rotateWord {
+    0% { opacity: 0; -moz-animation-timing-function: ease-in; -moz-transform: translateY(-200px) translateZ(300px) rotateY(-120deg); }
+    5% { opacity: 1; -moz-animation-timing-function: ease-out; -moz-transform: translateY(0px) translateZ(0px) rotateY(0deg); }
+    6% { text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    17% { opacity: 1; text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-o-keyframes rotateWord {
+    0% { opacity: 0; -o-animation-timing-function: ease-in; -o-transform: translateY(-200px) translateZ(300px) rotateY(-120deg); }
+    5% { opacity: 1; -o-animation-timing-function: ease-out; -o-transform: translateY(0px) translateZ(0px) rotateY(0deg); }
+    6% { text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    17% { opacity: 1; text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; -ms-animation-timing-function: ease-in; -ms-transform: translateY(-200px) translateZ(300px) rotateY(-120deg); }
+    5% { opacity: 1; -ms-animation-timing-function: ease-out; -ms-transform: translateY(0px) translateZ(0px) rotateY(0deg); }
+    6% { text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    17% { opacity: 1; text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; animation-timing-function: ease-in; transform: translateY(-200px) translateZ(300px) rotateY(-120deg); }
+    5% { opacity: 1; animation-timing-function: ease-out; transform: translateY(0px) translateZ(0px) rotateY(0deg); }
+    6% { text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    17% { opacity: 1; text-shadow: 0px 0px 0px rgba(255,255,255,1); color: $primaryLinks; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@media screen and (max-width: 1060px){
+
+}
+@media screen and (max-width: 400px){
+
+}
