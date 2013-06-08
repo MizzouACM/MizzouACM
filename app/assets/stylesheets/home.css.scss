@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $primaryLinks: rgb(44, 133, 133);
-.span6, .span3 {
+.span6 {
   background: rgba(255, 255, 255, 0.68);
   padding: 20px;
   border-radius: 10px;
@@ -10,36 +10,25 @@ $primaryLinks: rgb(44, 133, 133);
 .primary-links {
   color: $primaryLinks;
 }
-.acm-title {
-  transform: rotate(6deg);
-  -ms-transform: rotate(6deg);
-  -webkit-transform: rotate(6deg);
-  font-size: 6.15em;
-  color: rgba(41, 40, 40, 0.81);
-  margin-top: 5%;
-}
-
 .wrapper{
   font-family: 'Anton', sans-serif;
   .btn.btn-teal {
     margin-top: 20px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-}
-.wrapper a {
-  color: $primaryLinks;
+  a {
+    color: $primaryLinks;
+  }
 }
 .sentence{
   margin: 0;
   font-weight: 100;
-}
-.sentence span{
-  text-shadow: 2px 5px 10px rgba(0,0,0,0.1);
-}
-.sentence {
   font-size: 384%;
   color: rgba(56, 57, 63, 0.9);
   line-height: 1.1em;
+  span{
+    text-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+  }
 }
 .rotating{
   -webkit-perspective: 800px;
