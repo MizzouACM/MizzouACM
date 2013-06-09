@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $primaryLinks: rgb(44, 133, 133);
-.span6 {
+.transparent-region {
   background: rgba(255, 255, 255, 0.68);
+  padding: 20px;
+  border-radius: 10px;
+}
+.white-region {
+  background: white;
   padding: 20px;
   border-radius: 10px;
 }
