@@ -1,5 +1,7 @@
 #user-wrapper
   %h1 ACM Members
+  =form_tag(:controller => "users", :action => "search") do
+    =select_tag :skill, options_for_select(["Filter by interests"]+Skill.valid_skills.map { |e| e[0]}, @skill)
   - @users.each do |user|
     =link_to user do
       .user

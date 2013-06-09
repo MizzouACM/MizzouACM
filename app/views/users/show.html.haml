@@ -1,4 +1,7 @@
 .transparent-region
   =image_tag @user.gravatar_url, :class => 'gravatar'
+  .help-block
+    =link_to "Change my Gravatar", "https://gravatar.com/emails"
+    %a{"href"=>"#", "data-toggle"=>"tooltip", "title"=>"test"} Testing
   %h3=@user.name
   = render 'users/skills'

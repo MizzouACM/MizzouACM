@@ -1,8 +1,21 @@
 class UsersController < ApplicationController
-  before_filter :user_must_be_admin, :except => [:index, :show]
+  before_filter :user_must_be_admin, :except => [:index, :show, :search]
 
   def index
     @users = User.all
+  end
+
+  def search
+      @skill = params[:skill]
+      if !@skill || @skill == "Filter by interests"
+        index
+      else
+        @users = User.includes(:skills) .where("skills.name=?", @skill)
+        if @users.empty?
+          flash[:info] = "No members are interested in #{@skill}."
+        end
+      end
+      render :index
   end
 
   def edit
