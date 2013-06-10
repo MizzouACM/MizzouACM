@@ -1,2 +1,5 @@
 $ ->
-  $("#skill_name, #skill").change(-> $(this).closest("form").submit())
+  $("#skill_name, #skill_").change(-> $(this).closest("form").submit())
+  $(".skill-filter").click ->
+  	$(this).remove()
+  	$("#skill_").closest("form").submit()

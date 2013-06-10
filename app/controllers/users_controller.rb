@@ -6,13 +6,19 @@ class UsersController < ApplicationController
   end
 
   def search
-      @skill = params[:skill]
-      if !@skill || @skill == "Filter by interests"
-        index
-      else
-        @users = User.includes(:skills) .where("skills.name=?", @skill)
+      @skills = params[:skill]
+      @users = User.all
+      if @skills
+        @skills = @skills.split(",")
+        if @skills
+          @skills = @skills[0]
+        end
+        @skills = @skills.select{|skill| skill.length > 0}
+        @skills.each do |skill| 
+          @users = @users.select { |user| user.skills.map {|e| e.name }.include? skill }
+        end
         if @users.empty?
-          flash[:info] = "No members are interested in #{@skill}."
+          flash[:info] = "No members matched your search."
         end
       end
       render :index
