@@ -1,8 +1,9 @@
 .transparent-region
   - if user_is_current_user?
     =link_to "https://gravatar.com/emails" do
-      %div{:rel=>"tooltip","data-placement"=>"right", :title=>"Change your picture at Gravatar.com", :style=>"display:inline-block"}=image_tag @user.gravatar_url, :class => 'gravatar'
+      %div{:rel=>"tooltip","data-placement"=>"right", :title=>"Change your picture at Gravatar.com", :style=>"display:inline-block"}
+        .gravatar=image_tag @user.gravatar_url
   - else
-    =image_tag @user.gravatar_url, :class => 'gravatar'
+    .gravatar=image_tag @user.gravatar_url
   %h3=@user.name
   = render 'users/skills'
