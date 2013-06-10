@@ -43,6 +43,7 @@ class UsersController < ApplicationController
       flash[:info] = "It's not cool to have an empty profile! Post your skills!"
     end
     @new_skill = @user.skills.build
+    @repos = @user.repos
   end
 
 end

@@ -42,5 +42,11 @@ class User < ActiveRecord::Base
       name
     end
   end
-
+  def repos
+    begin
+      Github.repos.list user: github_username ? github_username : nil
+    rescue
+      []
+    end
+  end
 end

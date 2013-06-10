@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   helper_method :user_is_current_user?
   helper_method :user_must_be_current_user
 
+  attr_accessor :github
+  github = Github.new
+  
   private
     def current_user
       begin
@@ -42,5 +45,5 @@ class ApplicationController < ActionController::Base
     def user_is_admin?
       current_user and current_user.is_admin?
     end
-
+    
 end
