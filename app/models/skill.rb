@@ -37,4 +37,9 @@ class Skill < ActiveRecord::Base
   def self.getIcon(skill)
   	return self.valid_skills[skill]
   end
+  def self.remainingFilters(skills)
+    remaining_options = Skill.valid_skills.map{|e| e[0]}
+    remaining_options -= skills if skills
+    [["Filter by interests", nil]]+remaining_options.map { |e| [e, e]}
+  end
 end

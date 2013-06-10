@@ -14,7 +14,7 @@ class UsersController < ApplicationController
           @skills = @skills[0]
         end
         @skills = @skills.select{|skill| skill.length > 0}
-        @skills.each do |skill| 
+        @skills.each do |skill|
           @users = @users.select { |user| user.skills.map {|e| e.name }.include? skill }
         end
         if @users.empty?
@@ -36,7 +36,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
 
   def show
     @user = User.find(params[:id])
