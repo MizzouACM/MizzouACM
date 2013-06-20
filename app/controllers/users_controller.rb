@@ -44,7 +44,6 @@ class UsersController < ApplicationController
     end
     @new_skill = @user.skills.build
     @repos = @user.repos.sort {|x,y| y.watchers <=> x.watchers}
-     @r = sdfio
   end
 
 end
