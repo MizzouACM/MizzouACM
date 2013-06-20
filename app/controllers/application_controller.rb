@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_must_be_current_user
 
   attr_accessor :github
-  github = Github.new
+  github = Github.new :client_id => ENV['github_client_id'], :client_secret => ENV['github_client_secret']
   
   private
     def current_user
