@@ -12,13 +12,12 @@
   - @users.each do |user|
     =link_to user do
       .user
-        -if user.title
-          .ribbon-wrapper-green
-            .ribbon-green= user.title
-        .top
-          =image_tag user.gravatar_url, :class => 'gravatar'
-          .skills
-            -user.randomSkills(4).each do |skillImg|
-              =image_tag 'skill_icons/'+skillImg, :class => 'skill'
+        .user-before
+          -if user.title
+            .ribbon-wrapper-green
+              .ribbon-green= user.title
+        =image_tag user.gravatar_url, :class => 'gravatar'
+        .skills
+          =render 'users/user_block', :user => user
         .bottom
           %h3= user.display_name

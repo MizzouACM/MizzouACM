@@ -1,0 +1,12 @@
+-skillCount = user.skills.length
+-if (skillCount < 5)
+  -user.randomSkills(skillCount).each do |skill|
+    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), :class => 'skill', :title => skill.name
+-else
+  -skills = user.skills.shuffle
+  -skills[0..2].each do |skill|
+    =image_tag 'skill_icons/'+Skill.getIcon(skill.name), :class => 'skill', :title => skill.name
+  =image_tag 'ellipsis.png', :class => 'ellipsis more-skills', :rel => 'popover'
+  .more.hide
+    -skills[3..(skillCount-1)].each do |skill|
+      =image_tag 'skill_icons/'+Skill.getIcon(skill.name), :class => 'skill', :title => skill.name

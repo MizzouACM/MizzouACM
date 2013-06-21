@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_filter :user_must_be_admin, :except => [:index, :show, :search]
 
   def index
-    @users = User.all
+    @users = User.all.shuffle
   end
 
   def search
       @skills = params[:skill]
-      @users = User.all
+      @users = User.all.shuffle
       if @skills
         @skills = @skills.split(",")
         if @skills
