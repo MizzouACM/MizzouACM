@@ -1,0 +1,14 @@
+.transparent-region
+  - if user_is_admin?
+    = link_to edit_post_path(@post), :class => 'btn btn-teal pull-right' do
+      %i.icon-pencil.icon-white
+      Edit Post
+  %h1= @post.title
+  .help-block
+    Posted by
+    =link_to @post.user.display_name, @post.user
+    on 
+    =@post.created_at.to_s(:pretty)
+  %p
+    = @post.summary
+    = @post.body

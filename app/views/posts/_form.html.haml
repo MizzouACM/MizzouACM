@@ -1,0 +1,9 @@
+= simple_form_for(@post) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :summary, :input_html => { :class => "input-xxlarge" }, :label => "Summary", :hint => "The summary is displayed on the homepage and above the body of each post on their individual pages."
+    = f.input :body, :input_html => { :class => "input-xxlarge" }
+
+    = f.button :submit, :class => "btn btn-teal"

@@ -20,6 +20,12 @@
         %span{:style=>'margin-right: 25px'} There already is.
         .btn-holder
           %button.btn.btn-large.btn-teal More Information
+    .span4
+      -@posts.each do |post|
+        .post.transparent-region
+          %h3=link_to post.title, post
+          %p=post.summary
+
 //If you're up for learning how to grapple with the latest tech, we encourage you to join us.
 //Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
 //%p Have a cool technology or project you'd like to share?  Drop us a line.

@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $primaryLinks: rgb(44, 133, 133);
+.post {
+  margin-bottom: 30px;
+}
 .transparent-region {
   background: rgba(255, 255, 255, 0.68);
   padding: 20px;

@@ -1,5 +1,8 @@
 - if user_signed_in?
-  = link_to 'Submit a Project', new_project_path, :class=>'btn btn-large pull-right'
+  =link_to new_project_path do
+    .btn.btn-teal.pull-right
+      %i.icon-plus.icon-white
+      Submit a Project
 - else
   %a.btn.pull-right.btn-large{:disabled => true} Sign in to Submit a Project
 %h1 ACM Member Projects

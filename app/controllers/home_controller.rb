@@ -7,5 +7,6 @@ class HomeController < ApplicationController
     users = User.find(:all, :limit => max_activities, :order => 'created_at desc')
     projects = Project.find(:all, :limit => max_activities, :order => 'created_at desc')
     @feed = (events + users + projects).sort_by(&:created_at)[0,max_activities]
+  	@posts = Post.find(:all, :order => 'created_at desc')
   end
 end

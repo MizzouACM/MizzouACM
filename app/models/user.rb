@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :email, :github_username, :admin
 
   has_many :skills, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
   
   def randomSkills(n)
     skills.sample(n)
