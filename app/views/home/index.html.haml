@@ -1,32 +1,24 @@
 %link{:href=>"http://fonts.googleapis.com/css?family=Anton", :rel=>'stylesheet'}
 .container
   .row-fluid
-    .span6.transparent-region.wrapper
-      %h2.sentence
-        %span What if there was a
-        %span
-          %a club
-        %span whose
-        %span= link_to 'members', users_path
-        =link_to projects_path do
-          %span.rotating
-            %span created
-            %span hacked*
-            %span invented
-            %span shared
-        %span{:style=>'margin-left: 199px'} what they want?
-        %br
-        %br
-        %span{:style=>'margin-right: 25px'} There already is.
-        .btn-holder
-          %button.btn.btn-large.btn-teal More Information
+    .span6
+      .transparent-region
+        %h3 Association for Computer Machinery
+        %p If you're up for learning how to grapple with the latest tech, we encourage you to join us. Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff. What's not to like?
+        %p Have a cool technology or project you'd like to share? Drop us a line.
+      .transparent-region
+        %h2 Get Involved
+        %p
+          Anyone can join ACM regardless of skill level.  We typically have 1-2 meetings per month, as well as other activities.  For more information on upcoming events, check out our
+          =link_to('events page', events_path)+"."
     .span4
       -@posts.each do |post|
         .post
           =link_to post do
             .transparent-region
               %h3=post.title
-              %p=post.summary
+              %p!=post.markdown_summary
+              Read More
 
 //If you're up for learning how to grapple with the latest tech, we encourage you to join us.
 //Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?

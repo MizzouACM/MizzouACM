@@ -10,5 +10,5 @@
     on 
     =@post.created_at.to_s(:pretty)
   %p
-    = @post.summary
-    = @post.body
+    != @post.markdown_summary
+    != @post.markdown_body
