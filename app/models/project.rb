@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :user
+  validates_presence_of :description, :title, :photo
+  validates_length_of :title, :minimum => 8
   attr_accessible :description, :demo_link, :source_link, :title, :user_id, :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
   has_attached_file :photo,
 					:styles => {

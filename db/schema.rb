@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622042453) do
+ActiveRecord::Schema.define(:version => 20130622183754) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130622042453) do
     t.boolean  "admin",           :default => false, :null => false
     t.string   "github_username"
     t.string   "title"
+    t.text     "bio"
   end
 
 end

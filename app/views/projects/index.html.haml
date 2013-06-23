@@ -1,17 +1,17 @@
-- if user_signed_in?
-  =link_to new_project_path do
-    .btn.btn-teal.pull-right
-      %i.icon-plus.icon-white
-      Submit a Project
-- else
-  %a.btn.pull-right.btn-large{:disabled => true} Sign in to Submit a Project
-%h1 ACM Member Projects
-#projects
-  - @projects.each do |project|
-    .project
-      = link_to project do
-        = image_tag project.photo.url(:thumb)
-        .textFrame
-          = project.title + ' by ' + project.user.name
-%br
-
+.transparent-region
+  - if user_signed_in?
+    =link_to new_project_path do
+      .btn.btn-teal.pull-right
+        %i.icon-plus.icon-white
+        Submit a Project
+  - else
+    %a.btn.pull-right.btn-large{:disabled => true} Sign in to Submit a Project
+  %h1 ACM Member Projects
+  #projects
+    - @projects.each do |project|
+      .project
+        = link_to project do
+          = image_tag project.photo.url(:thumb)
+          .textFrame
+            = project.title + ' by ' + project.user.name
+  %br

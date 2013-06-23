@@ -1,7 +1,7 @@
 %link{:href=>"http://fonts.googleapis.com/css?family=Anton", :rel=>'stylesheet'}
-.wrapper.container
+.container
   .row-fluid
-    .span6.transparent-region
+    .span6.transparent-region.wrapper
       %h2.sentence
         %span What if there was a
         %span
@@ -22,9 +22,11 @@
           %button.btn.btn-large.btn-teal More Information
     .span4
       -@posts.each do |post|
-        .post.transparent-region
-          %h3=link_to post.title, post
-          %p=post.summary
+        .post
+          =link_to post do
+            .transparent-region
+              %h3=post.title
+              %p=post.summary
 
 //If you're up for learning how to grapple with the latest tech, we encourage you to join us.
 //Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?

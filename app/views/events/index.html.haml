@@ -1,41 +1,42 @@
-- if user_is_admin?
-  = link_to 'New Event', new_event_path, :class => 'btn btn-large pull-right'
-%h2 Upcoming Events
-#event-wrapper
-  - unless @upcoming_events.empty?
-    - @upcoming_events.each do |event|
-      .box.event
-        - if user_is_admin?
-          = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
-        = link_to event.name, event.facebook_link, :class => 'event-title'
-        %p 
-          != event.rendered_description
-        %p.small
-          Location:  
-          = event.location       
-        %p.small
-          Time:
-          = event.date.to_s(:pretty)
-  - else
-    %p We currently have no upcoming events planned. Check back soon!
-
-%h2 Past Events
-#event-wrapper
-  .past-events
-    - unless @past_events.empty?
-      - @past_events.each do |event|
+.transparent-region
+  - if user_is_admin?
+    = link_to 'New Event', new_event_path, :class => 'btn pull-right'
+  %h2 Upcoming Events
+  #event-wrapper
+    - unless @upcoming_events.empty?
+      - @upcoming_events.each do |event|
         .box.event
           - if user_is_admin?
             = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
           = link_to event.name, event.facebook_link, :class => 'event-title'
           %p 
             != event.rendered_description
-          %p.small 
+          %p.small
             Location:  
             = event.location       
           %p.small
             Time:
             = event.date.to_s(:pretty)
     - else
-      %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
+      %p We currently have no upcoming events planned. Check back soon!
+
+  %h2 Past Events
+  #event-wrapper
+    .past-events
+      - unless @past_events.empty?
+        - @past_events.each do |event|
+          .box.event
+            - if user_is_admin?
+              = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
+            = link_to event.name, event.facebook_link, :class => 'event-title'
+            %p 
+              != event.rendered_description
+            %p.small 
+              Location:  
+              = event.location       
+            %p.small
+              Time:
+              = event.date.to_s(:pretty)
+      - else
+        %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
 

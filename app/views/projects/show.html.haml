@@ -1,20 +1,21 @@
-- if user_is_admin? or current_user == @project.user
-  = link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-large pull-right'
-%h1=@project.title
 
 .row
-  .span8
-    =image_tag @project.photo.url(:large)
+  -if @project.photo_file_size
+    .span8
+      =image_tag @project.photo.url(:large), :id =>"project_img"
   .span4
-    .well
+    .transparent-region
+      %h3=@project.title
+      - if user_is_admin? or current_user == @project.user
+        = link_to edit_project_path(@project), :class => 'btn btn-teal', :id => "edit-btn" do
+          %i.icon-pencil.icon-white
+          Edit Project
       %strong
         ="Posted by "
         =link_to @project.user.name, @project.user
       .links
-        -if @project.demo_link?
-          = link_to 'Demo', @project.demo_link
-        -if @project.source_link?
-          = link_to 'Source Code', @project.source_link
+        = link_to 'View Demo', @project.demo_link if @project.demo_link?
+        = link_to 'Source Code', @project.source_link if @project.source_link?
       -if @project.description?
         %hr
         = @project.description

@@ -2,13 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $primaryLinks: rgb(44, 133, 133);
+.post:hover a {
+  text-decoration: none;
+}
+.post {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+}
+.post:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform:    scale(1.1);
+  -o-transform:      scale(1.1);
+  -ms-transform:     scale(1.1);
+
+}
 .post {
   margin-bottom: 30px;
-}
-.transparent-region {
-  background: rgba(255, 255, 255, 0.68);
-  padding: 20px;
-  border-radius: 10px;
 }
 .white-region {
   background: white;
@@ -32,7 +41,6 @@ $primaryLinks: rgb(44, 133, 133);
   margin: 0;
   font-weight: 100;
   font-size: 384%;
-  color: rgba(56, 57, 63, 0.9);
   line-height: 1.1em;
   span{
     text-shadow: 2px 5px 10px rgba(0,0,0,0.1);

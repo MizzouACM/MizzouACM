@@ -6,7 +6,8 @@
     = javascript_include_tag "application", :media => "all"
     = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tag
-  %body
+    %link{:href=>"http://fonts.googleapis.com/css?family=Open+Sans", :rel=>'stylesheet'}
+  %body{:style=>"background: url('/assets/backgrounds/6.jpg') no-repeat center center fixed"}
     = render 'layouts/nav'
     .container
       #main{:role => "main"}
