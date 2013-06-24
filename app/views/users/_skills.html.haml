@@ -14,4 +14,4 @@
           .user-skill-wrapper
             =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
             - if user_is_current_user?
-              =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"  
+              =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"
