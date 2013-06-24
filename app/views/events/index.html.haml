@@ -1,45 +1,16 @@
-.transparent-region
+%h2.transparent-region
+  Upcoming Events
   - if user_is_admin?
-    =link_to new_event_path do
-      .btn.btn-teal.pull-right
-        %i.icon-plus.icon-white
-        New Event
-  %h2 Upcoming Events
-  #event-wrapper
-    - unless @upcoming_events.empty?
-      - @upcoming_events.each do |event|
-        .box.event
-          - if user_is_admin?
-            = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
-          = link_to event.name, event.facebook_link, :class => 'event-title'
-          %p 
-            != event.rendered_description
-          %p.small
-            Location:  
-            = event.location       
-          %p.small
-            Time:
-            = event.date.to_s(:pretty)
-    - else
-      %p We currently have no upcoming events planned. Check back soon!
+    =link_to new_event_path, :class => "btn btn-teal pull-right" do
+      %i.icon-plus.icon-white
+      New Event
+- unless @upcoming_events.empty?
+  =render 'events/events_list', :events => @upcoming_events
+- else
+  %p.transparent-region We currently have no upcoming events planned. Check back soon!
 
-  %h2 Past Events
-  #event-wrapper
-    .past-events
-      - unless @past_events.empty?
-        - @past_events.each do |event|
-          .box.event
-            - if user_is_admin?
-              = link_to 'Edit', edit_event_path(event), :class => 'btn btn-small pull-right'
-            = link_to event.name, event.facebook_link, :class => 'event-title'
-            %p 
-              != event.rendered_description
-            %p.small 
-              Location:  
-              = event.location       
-            %p.small
-              Time:
-              = event.date.to_s(:pretty)
-      - else
-        %p This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!
-
+%h2.transparent-region Past Events
+- unless @past_events.empty?
+  =render 'events/events_list', :events => @past_events
+- else
+  %p.transparent-region This section will hopefully grow very quickly as the new ACM leadership plans tons of cool stuff!

@@ -1,0 +1,13 @@
+-events.each do |event|
+  .transparent-region
+    - if user_is_admin?
+      = link_to edit_event_path(event), :class => 'btn btn-teal pull-right' do
+        %i.icon-pencil.icon-white
+        Edit Event
+    %h3= link_to event.name, event.facebook_link, :class => 'event-title'
+    %p
+      = event.date.to_s(:pretty)
+      at
+      = event.location
+    %p 
+      != event.rendered_description
