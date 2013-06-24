@@ -10,8 +10,11 @@
     -if @user.title?
       %p=@user.title
     %a{"href" => @user.github_url} View on GitHub
-  .transparent-region.span3
-    = render 'users/skills'
+  = render 'users/skills'
   -if not @repos.empty?
     .transparent-region.span3
       = render 'users/repos'
+.row
+  -if not @user.projects.empty?
+    .transparent-region.span3
+      = render 'users/projects'

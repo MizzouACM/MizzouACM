@@ -1,17 +1,17 @@
-%h4 Skills
-- if !user_is_current_user? and @user.skills.length < 2
-  %p This user has not posted their skills yet.
-- if user_is_current_user?
-  .help-block You can add skills to your profile to let other ACM members know what you're proficient in.
-  = simple_form_for([@user, @new_skill]) do |f|
-    = f.error_notification
+- if user_is_current_user? or (!user_is_current_user? and @user.skills.length > 1)
+  .transparent-region.span3
+    %h4 Skills
+    - if user_is_current_user?
+      .help-block You can add skills to your profile to let other ACM members know what you're proficient in.
+      = simple_form_for([@user, @new_skill]) do |f|
+        = f.error_notification
 
-    .form-inputs
-      = f.input :name, collection: Skill.valid_skills_dropdown(@user), default: 1, label: false
--if @user.skills.length > 1
-  .white-region
-    -@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
-      .user-skill-wrapper
-        =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
-        - if user_is_current_user?
-          =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"
+        .form-inputs
+          = f.input :name, collection: Skill.valid_skills_dropdown(@user), default: 1, label: false
+    -if @user.skills.length > 1
+      .white-region
+        -@user.skills.reject(&:new_record?).sort{|x,y| x.name.downcase <=> y.name.downcase}.each do |skill|
+          .user-skill-wrapper
+            =image_tag 'skill_icons/'+Skill.getIcon(skill.name), {:class=>"skill", :title=>skill.name}
+            - if user_is_current_user?
+              =link_to 'Remove', user_skill_path(@user, skill), :method => :delete, :class=>"remove_skill"  

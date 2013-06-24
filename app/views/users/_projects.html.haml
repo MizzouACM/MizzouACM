@@ -1,0 +1,4 @@
+%h4 Projects
+%ul
+-@user.projects.each do |project|
+  %li=link_to project.title, project
