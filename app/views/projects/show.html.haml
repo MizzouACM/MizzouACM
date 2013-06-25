@@ -18,4 +18,4 @@
         = link_to 'Source Code', @project.source_link if @project.source_link?
       -if @project.description?
         %hr
-        = @project.description
+        = @project.rendered_description

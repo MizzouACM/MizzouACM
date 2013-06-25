@@ -12,4 +12,13 @@ class Project < ActiveRecord::Base
 					:s3_credentials => { :access_key_id => ENV['access_key_id'], :secret_access_key => ENV['secret_access_key'], :bucket => "acm_pictures"},
 					:path => ":attachment/:id/:style.:extension",
 					:bucket => 'acm_pictures'
+
+  @@markdown = Redcarpet::Markdown.new(
+    Redcarpet::Render::HTML,
+    :autolink => true,
+    :space_after_headers => true)
+
+  def rendered_description
+    @@markdown.render(description)
+  end
 end
