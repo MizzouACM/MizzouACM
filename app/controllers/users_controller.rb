@@ -18,7 +18,7 @@ class UsersController < ApplicationController
           @users = @users.select { |user| user.skills.map {|e| e.name }.include? skill }
         end
         if @users.empty?
-          flash[:info] = "No members matched your search."
+          flash.now[:info] = "No members matched your search."
         end
       end
       render :index
