@@ -29,3 +29,8 @@
 	text-align: center;
 	font-weight: normal;
 }
+@media all and (min-width: 1200px) {
+	.container, .navbar-fixed-top .container {
+		width: 1340px;
+	}
+}
