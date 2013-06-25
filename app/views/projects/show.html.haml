@@ -2,7 +2,7 @@
 .row
   -if @project.photo_file_size
     .span8
-      =image_tag @project.photo.url(:large), :id =>"project_img"
+      =image_tag @project.photo.url(:large), :id =>"project_img", :class => "transparent-region"
   .span4
     .transparent-region
       %h3=@project.title
