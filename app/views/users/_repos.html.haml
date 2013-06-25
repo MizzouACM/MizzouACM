@@ -1,5 +1,4 @@
 %h4 GitHub Repositories
 %ul
 -@repos.each do |repo|
-  %li
-    %a{:href=> repo.html_url}=repo.name
+  %li=link_to repo.name, repo.html_url

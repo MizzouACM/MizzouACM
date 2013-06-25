@@ -9,12 +9,12 @@
     %h3=@user.name
     -if @user.title?
       %p=@user.title
-    %a{"href" => @user.github_url} View on GitHub
+    =link_to "View on GitHub", @user.github_url
   = render 'users/skills'
   -if not @repos.empty?
     .transparent-region.span3
       = render 'users/repos'
 .row
   -if not @user.projects.empty?
-    .transparent-region.span3
+    .transparent-region.span2
       = render 'users/projects'

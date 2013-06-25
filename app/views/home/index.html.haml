@@ -12,7 +12,7 @@
           Anyone can join ACM regardless of skill level.  We typically have 1-2 meetings per month, as well as other activities.  For more information on upcoming events, check out our
           =link_to('events page', events_path)+"."
     .span4
-      -@posts.each do |post|
+      -@posts.first(4).each do |post|
         .post
           =link_to post do
             .transparent-region

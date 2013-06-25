@@ -4,9 +4,7 @@
       .btn.btn-teal.pull-right
         %i.icon-plus.icon-white
         Submit a Project
-  - else
-    %a.btn.pull-right.btn-large{:disabled => true} Sign in to Submit a Project
-  %h1 ACM Member Projects
+  %h1 Member Projects
   #projects
     - @projects.each do |project|
       .project

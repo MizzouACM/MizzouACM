@@ -10,7 +10,7 @@
             = hidden_field_tag "skill[]", skill
     =select_tag "skill[]", options_for_select( Skill.remainingFilters(@skills), @skill)
   - @users.each do |user|
-    =link_to user do
+    =link_to user, :class=>"user-outer" do
       .user
         .user-before
           -if user.title
