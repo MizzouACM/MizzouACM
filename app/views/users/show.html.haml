@@ -1,20 +1,21 @@
 .row
-  .transparent-region.span2
-    - if user_is_current_user?
-      =link_to "https://gravatar.com/emails" do
-        %div{:rel=>"tooltip","data-placement"=>"right", :title=>"Change your picture at Gravatar.com", :style=>"display:inline-block"}
-          .gravatar=image_tag @user.gravatar_url
-    - else
-      .gravatar=image_tag @user.gravatar_url
-    %h3=@user.name
-    -if @user.title?
-      %p=@user.title
-    =link_to "View on GitHub", @user.github_url
+  .span3
+    .transparent-region
+      - if user_is_current_user?
+        =link_to "https://gravatar.com/emails" do
+          %div{:rel=>"tooltip","data-placement"=>"right", :title=>"Change your picture at Gravatar.com", :style=>"display:inline-block"}
+            .gravatar=image_tag @user.gravatar_url
+      - else
+        .gravatar=image_tag @user.gravatar_url
+      %h3=@user.name
+      -if @user.title?
+        %p=@user.title
+      =link_to "View on GitHub", @user.github_url
+    -if not @user.projects.empty?
+      .transparent-region
+        = render 'users/projects'
+    
   = render 'users/skills'
   -if not @repos.empty?
     .transparent-region.span3
       = render 'users/repos'
-.row
-  -if not @user.projects.empty?
-    .transparent-region.span2
-      = render 'users/projects'
