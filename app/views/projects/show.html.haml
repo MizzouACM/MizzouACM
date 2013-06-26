@@ -19,3 +19,7 @@
       -if @project.description?
         %hr
         != @project.rendered_description
+      - if user_is_admin? or current_user == @project.user
+        =link_to @project, :confirm => 'Are you sure?', :method => :delete, :class=>'btn btn-danger btn-small' do
+          %i.icon-trash.icon-white
+          Delete Project
