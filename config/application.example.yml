@@ -14,5 +14,9 @@
 # Stuff you'll need to add to develop locally (contact one of the other devs):
 
 # AWS Keys:
-access_key_id: putyouridhere!
+access_key_id: hello-world
 secret_access_key: hunter2
+
+# Github Keys:
+github_client_id: open
+github_client_secret: sesame
