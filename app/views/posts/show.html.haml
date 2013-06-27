@@ -1,8 +1,7 @@
 .transparent-region
   - if user_is_admin?
-    = link_to edit_post_path(@post), :class => 'btn btn-teal pull-right' do
-      %i.icon-pencil.icon-white
-      Edit Post
+    = link_to edit_post_path(@post), :class => 'pull-right' do
+      =icon_btn "Edit Post", "pencil"
   %h1= @post.title
   .help-block
     Posted by

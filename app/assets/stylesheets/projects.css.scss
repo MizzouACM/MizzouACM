@@ -8,29 +8,30 @@
   float: right;
 }
 .project {
-	margin: 15px;
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+  margin: 15px;
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.09);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.09);
 }
 .project img {
-	margin: 0px auto;
-	display: block;
+  margin: 0px auto;
+  display: block;
+  max-height: 250px;
 }
 .textFrame {
-	background: #f9f9f9;
-	color: #333;
-	padding: 14px 10px;
-	border-bottom: 1px solid #eee;
-	margin: 0px;
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
-	text-align: center;
-	font-weight: normal;
+  background: #f9f9f9;
+  color: #333;
+  padding: 14px 10px;
+  border-bottom: 1px solid #eee;
+  margin: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  text-align: center;
+  font-weight: normal;
 }
 @media all and (min-width: 1200px) {
-	.container, .navbar-fixed-top .container {
-		width: 1340px;
-	}
+  .container, .navbar-fixed-top .container {
+  width: 1340px;
+  }
 }

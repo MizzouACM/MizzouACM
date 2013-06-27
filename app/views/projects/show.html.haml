@@ -7,9 +7,8 @@
     .transparent-region
       %h3=@project.title
       - if user_is_admin? or current_user == @project.user
-        = link_to edit_project_path(@project), :class => 'btn btn-teal', :id => "edit-btn" do
-          %i.icon-pencil.icon-white
-          Edit Project
+        = link_to edit_project_path(@project), :id => "edit-btn" do
+          =icon_btn "Edit Project", "pencil"
       %strong
         ="Posted by "
         =link_to @project.user.name, @project.user
@@ -20,6 +19,5 @@
         %hr
         != @project.rendered_description
       - if user_is_admin? or current_user == @project.user
-        =link_to @project, :confirm => 'Are you sure?', :method => :delete, :class=>'btn btn-danger btn-small' do
-          %i.icon-trash.icon-white
-          Delete Project
+        =link_to @project, :confirm => 'Are you sure?', :method => :delete do
+          =icon_btn "Delete Project", "trash", "danger", :class => 'btn-mini'

@@ -1,14 +1,12 @@
 %h2.transparent-region
   Upcoming Events
   - if user_is_admin?
-    =link_to new_event_path, :class => "btn btn-teal pull-right" do
-      %i.icon-plus.icon-white
-      New Event
+    =link_to new_event_path, :class => 'pull-right' do  
+      =icon_btn "New Event", "plus"
 - unless @upcoming_events.empty?
   =render 'events/events_list', :events => @upcoming_events
 - else
   %p.transparent-region We currently have no upcoming events planned. Check back soon!
-
 %h2.transparent-region Past Events
 - unless @past_events.empty?
   =render 'events/events_list', :events => @past_events
