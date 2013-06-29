@@ -1,0 +1,13 @@
+.transparent-region
+  %h3 Thumb
+  =image_tag @attachment.image.url(:thumb)
+  %h3 Medium
+  =image_tag @attachment.image.url(:medium)
+  %h3 Large
+  =image_tag @attachment.image.url(:large)
+  %h3 Full
+  =image_tag @attachment.image.url
+
+  = link_to 'Edit', edit_attachment_path(@attachment)
+  \|
+  = link_to 'Back', attachments_path

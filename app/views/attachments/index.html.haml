@@ -1,0 +1,18 @@
+.transparent-region
+  %h1 Attachments
+
+  %table
+    %tr
+      %th
+      %th
+      %th
+
+    - @attachments.each do |attachment|
+      %tr
+        %td
+          =link_to attachment do
+            =image_tag attachment.image.url(:thumb)
+        %td
+          = link_to edit_attachment_path(attachment) do
+            =icon_btn 'Edit', 'pencil'
+        %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger'
