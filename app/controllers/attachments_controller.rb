@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+  before_filter :user_must_be_admin, :except => [:index, :show]
   # GET /attachments
   # GET /attachments.json
   def index
