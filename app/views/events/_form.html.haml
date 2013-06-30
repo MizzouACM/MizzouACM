@@ -7,9 +7,8 @@
     = f.input :location
     = f.input :facebook_link
     = f.input :description, :input_html => { :class => "input-xxlarge", :rows => 15 }
-    = f.simple_fields_for :attachments, html: { multipart: true } do |a|
+    = f.simple_fields_for :attachment do |a|
       = a.input :image
-      = file_field_tag('event_attachments', multiple: true, name: "item[attached_assets_attributes][][asset]")
 
   .form-actions
     = f.button :submit

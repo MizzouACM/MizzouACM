@@ -45,8 +45,8 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    if @event.attachments.empty?
-      @event.attachments.build
+    if not @event.attachment
+      @event.attachment.build
     end
     @event
   end
