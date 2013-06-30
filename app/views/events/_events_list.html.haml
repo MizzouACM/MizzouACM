@@ -12,5 +12,4 @@
         .span9
           != event.rendered_description
         .span3
-          -event.attachments.each do |attachment|
-            =image_tag attachment.image.url (:medium)
+          =image_tag event.attachment.image.url (:medium) if event.attachment
