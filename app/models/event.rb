@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :date, :description, :location, :name, :facebook_link, :attachments_attributes
+  attr_accessible :date, :description, :location, :name, :facebook_link, :attachment_attributes
   has_one :attachment, :as => :attachable
   accepts_nested_attributes_for :attachment
   validates_presence_of :date, :description, :location, :name

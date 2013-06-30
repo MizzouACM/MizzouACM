@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.attachments.build
+    @event.attachment = Attachment.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     if not @event.attachment
-      @event.attachment.build
+      @event.attachment = Attachment.new
     end
     @event
   end
