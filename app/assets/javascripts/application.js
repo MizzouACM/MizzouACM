@@ -16,3 +16,22 @@
 //= require bootstrap
 //= require bootstrap-lightbox
 //= require_tree .
+$(function() {
+  $('.newFiles .upload').hide()
+  $('.newFiles .upload:first').show()
+  $('#moreUploads').click(function() {
+    $(".newFiles .upload").each(function() {
+      if ($(this).css("display") == "none") {
+        $(this).show()
+        return false
+      }
+    })
+  })
+  $(".default-picture input").click(function() {
+    console.log('test')
+    $(".default-picture input").each(function() {
+      this.checked = this.value = false
+    })
+    this.checked = this.value = true
+  })
+})

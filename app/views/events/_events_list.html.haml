@@ -12,5 +12,5 @@
         .span9
           != event.rendered_description
         .span3
-          -if event.attachment
-            =lightbox event.attachment, event.name
+          -#if event.attachments.length
+            =#lightbox event.attachments.first, event.name

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629234028) do
+ActiveRecord::Schema.define(:version => 20130630222113) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130629234028) do
     t.datetime "image_updated_at"
     t.integer  "attachable_id"
     t.string   "attachable_type"
+    t.boolean  "default"
   end
 
   create_table "events", :force => true do |t|

@@ -1,4 +1,4 @@
-= simple_form_for(@event) do |f|
+= simple_form_for @event, :html => { :multipart => true } do |f|
   = f.error_notification
 
   .form-inputs
@@ -7,8 +7,25 @@
     = f.input :location
     = f.input :facebook_link
     = f.input :description, :input_html => { :class => "input-xxlarge", :rows => 15 }
-    = f.simple_fields_for :attachment do |a|
-      = a.input :image
+  .newFiles.row
+    .span12
+      = f.fields_for :attachments do |attachment|
+        -if attachment.object.new_record?
+          .upload
+            = attachment.file_field :image
+      #moreUploads.btn.btn-teal.btn-small Upload Another
+  %br
+  .row
+    =f.fields_for :attachments do |attachment|
+      -unless attachment.object.new_record?
+        .thumbnail.span3
+          = image_tag(attachment.object.image.url(:medium))
+          .delete.checkbox
+            = attachment.check_box :_destroy
+            Remove
+          .default-picture
+            = attachment.check_box :default
+            Default Picture
 
   .form-actions
     = f.button :submit
