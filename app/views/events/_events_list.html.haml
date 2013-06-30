@@ -8,5 +8,9 @@
       = event.date.to_s(:pretty)
       at
       = event.location
-    %p 
-      != event.rendered_description
+      .row
+        .span9
+          != event.rendered_description
+        .span3
+          -event.attachments.each do |attachment|
+            =image_tag attachment.image.url (:medium)

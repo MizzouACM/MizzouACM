@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :email, :github_username, :admin
-
   has_many :skills, :dependent => :destroy
   has_many :posts, :dependent => :destroy
   has_many :projects, :dependent => :destroy

@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
+    @event.attachments.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
@@ -45,6 +45,10 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    if @event.attachments.empty?
+      @event.attachments.build
+    end
+    @event
   end
 
   # POST /events

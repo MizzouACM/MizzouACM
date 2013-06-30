@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629223225) do
+ActiveRecord::Schema.define(:version => 20130629234028) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20130629223225) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
   end
 
   create_table "events", :force => true do |t|
@@ -30,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130629223225) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "facebook_link"
+    t.integer  "attachment_id"
   end
 
   create_table "posts", :force => true do |t|

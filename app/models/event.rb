@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
-  attr_accessible :date, :description, :location, :name, :facebook_link
-
+  attr_accessible :date, :description, :location, :name, :facebook_link, :attachments_attributes
+  has_many :attachments, :as => :attachable
+  accepts_nested_attributes_for :attachments
   validates_presence_of :date, :description, :location, :name
 
   @@markdown = Redcarpet::Markdown.new(

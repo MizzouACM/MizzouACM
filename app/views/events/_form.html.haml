@@ -7,6 +7,8 @@
     = f.input :location
     = f.input :facebook_link
     = f.input :description, :input_html => { :class => "input-xxlarge", :rows => 15 }
+    = f.simple_fields_for :attachments do |a|
+      = a.input :image
 
   .form-actions
     = f.button :submit
