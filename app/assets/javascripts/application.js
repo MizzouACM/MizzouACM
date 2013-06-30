@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require freetile
 //= require bootstrap
+//= require bootstrap-lightbox
 //= require_tree .
