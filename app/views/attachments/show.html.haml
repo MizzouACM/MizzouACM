@@ -1,4 +1,6 @@
 .transparent-region
+  =@attachment.attachable_type
+  =@attachment.attachable_id
   %h3 Thumb
   =image_tag @attachment.image.url(:thumb)
   %h3 Medium

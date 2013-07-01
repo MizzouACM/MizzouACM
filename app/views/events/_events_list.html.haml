@@ -11,6 +11,6 @@
       .row
         .span9
           != event.rendered_description
-        -if event.attachments.length > 1
+        -if event.attachments.length > 0
           .span3
             =lightbox (defaultImg event), event.name

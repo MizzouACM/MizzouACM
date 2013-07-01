@@ -1,5 +1,5 @@
 class Attachment < ActiveRecord::Base
-  attr_accessible :image, :default
+  attr_accessible :image, :default, :attachable_type, :attachable_id
   belongs_to :attachable, polymorphic: true
   has_attached_file :image,
                     :styles => { :large => "800x800>", :medium => "300x300>", :thumb => "100x100>" },
