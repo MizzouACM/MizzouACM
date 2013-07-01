@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_is_admin?
   helper_method :user_is_current_user?
   helper_method :user_must_be_current_user
+  helper_method :defaultImg
 
   attr_accessor :github
   github = Github.new :client_id => ENV['GITHUB_KEY'], :client_secret => ENV['GITHUB_SECRET']
@@ -45,5 +46,13 @@ class ApplicationController < ActionController::Base
     def user_is_admin?
       current_user and current_user.is_admin?
     end
-    
+
+    def defaultImg object
+      object.class.find(object.id).attachments.each { |attachment|
+        if attachment.default
+          return attachment
+        end
+      }
+      object.class.find(object.id).attachments.sample
+    end
 end

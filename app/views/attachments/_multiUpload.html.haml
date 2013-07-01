@@ -1,0 +1,25 @@
+.newFiles.row
+  .span12
+    = field.fields_for :attachments do |attachment|
+      -if attachment.object.new_record?
+        .upload
+          = attachment.file_field :image
+      -else
+        .hide
+    #moreUploads.btn.btn-teal.btn-small Upload Another
+%br
+.row
+  =field.fields_for :attachments do |attachment|
+    -unless attachment.object.new_record?
+      .thumbnail.span3.well
+        = image_tag(attachment.object.image.url(:medium))
+        .caption.text-center
+          = attachment.check_box :default, :class => "default-checkbox"
+          .btn.btn-primary.btn-default-picture{"data-toggle" => "button" } 
+            %i.icon-white.icon-ok
+            Default Picture
+        
+          = attachment.check_box :_destroy, :class => 'hide'
+          .btn.btn-danger.remove-picture
+            %i.icon-white.icon-trash
+            Remove

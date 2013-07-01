@@ -7,26 +7,7 @@
     = f.input :location
     = f.input :facebook_link
     = f.input :description, :input_html => { :class => "input-xxlarge", :rows => 15 }
-  .newFiles.row
-    .span12
-      = f.fields_for :attachments do |attachment|
-        -if attachment.object.new_record?
-          .upload
-            = attachment.file_field :image
-      #moreUploads.btn.btn-teal.btn-small Upload Another
-  %br
-  .row
-    =f.fields_for :attachments do |attachment|
-      -unless attachment.object.new_record?
-        .thumbnail.span3
-          = image_tag(attachment.object.image.url(:medium))
-          .delete.checkbox
-            = attachment.check_box :_destroy
-            Remove
-          .default-picture
-            = attachment.check_box :default
-            Default Picture
-
+    =render 'attachments/multiUpload', {:field => f}
   .form-actions
     = f.button :submit
 

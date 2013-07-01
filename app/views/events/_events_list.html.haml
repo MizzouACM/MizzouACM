@@ -11,6 +11,6 @@
       .row
         .span9
           != event.rendered_description
-        .span3
-          -#if event.attachments.length
-            =#lightbox event.attachments.first, event.name
+        -if event.attachments.length > 1
+          .span3
+            =lightbox (defaultImg event), event.name

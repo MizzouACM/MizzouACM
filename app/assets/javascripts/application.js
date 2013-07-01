@@ -18,6 +18,7 @@
 //= require_tree .
 $(function() {
   $('.newFiles .upload').hide()
+  $(".default-checkbox").css("display", "none")
   $('.newFiles .upload:first').show()
   $('#moreUploads').click(function() {
     $(".newFiles .upload").each(function() {
@@ -27,11 +28,35 @@ $(function() {
       }
     })
   })
-  $(".default-picture input").click(function() {
+  $(".default-checkbox").each(function() {
+    if ($(this).attr('checked') == "checked") {
+      $(this).next().addClass('active')
+    }
+  })
+  $(".btn-default-picture").click(function(e) {
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active')
+    } else {
+      var a = $(this).prev()
+      a.checked = a.value = true
+      $('.default-checkbox').each(function() {
+        $(this).prop('checked', false)
+      })
+      a.prop('checked', true)
+
+      $('.btn-default-picture').removeClass('active')
+      //$(this).addClass('active')
+    }
+  })
+  $(".default-picture input").change(function() {
     console.log('test')
     $(".default-picture input").each(function() {
       this.checked = this.value = false
     })
     this.checked = this.value = true
+  })
+  $('.remove-picture').click(function() {
+    $(this).prev().prop('checked', true)
+    $(this).parent().parent().hide()
   })
 })
