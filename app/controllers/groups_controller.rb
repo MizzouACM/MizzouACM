@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+
+    before_filter :user_must_be_admin, :except => [:index, :show]
   # GET /groups
   # GET /groups.json
   def index
