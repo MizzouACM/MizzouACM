@@ -1,0 +1,9 @@
+.transparent-region
+  %h1 Groups
+  - if user_is_admin?
+    = link_to 'New Group', new_group_path, :class => 'btn btn-teal pull-right'
+  %ul
+    - @groups.each do |group|
+      %li=link_to group.name, group
+
+  %br
