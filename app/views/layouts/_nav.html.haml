@@ -8,11 +8,11 @@
       =link_to 'Mizzou ACM', root_path, :class=>"brand"
       .nav-collapse.collapse
         %ul.nav
-          =nav_link 'Projects', '/projects'
           =nav_link 'Events', events_path
-          =nav_link 'Members', '/users'
+          =nav_link 'Members', users_path
+          =nav_link 'Groups', groups_path
+          =nav_link 'Projects', projects_path
           =nav_link 'Facebook', 'https://www.facebook.com/groups/MizzouACM/?fref=ts'
-          =nav_link 'OrgSync', 'https://orgsync.com/47160/chapter'
         .pull-right
           %ul.nav
             - if user_signed_in?
