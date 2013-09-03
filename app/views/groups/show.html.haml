@@ -1,7 +1,7 @@
 .transparent-region
   %h1= @group.name
   %p= @group.description
-  =link_to "View on Facebook", @group.facebook_path if @group.facebook_path?
+  =link_to "View on Facebook", @group.facebook_path unless @group.facebook_path.empty?
 
   %br
   %br
