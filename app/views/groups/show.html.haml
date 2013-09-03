@@ -1,7 +1,9 @@
 .transparent-region
   %h1= @group.name
   %p= @group.description
+  =link_to "View on Facebook", @group.url if @group.url?
 
-  = link_to 'Edit', edit_group_path(@group) if user_is_admin?
   %br
+  %br
+  = link_to 'Edit', edit_group_path(@group), :class => 'btn btn-danger' if user_is_admin?
   = link_to 'All Groups', groups_path, :class=> 'btn btn-teal'
