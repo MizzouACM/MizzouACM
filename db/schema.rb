@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903005945) do
+ActiveRecord::Schema.define(:version => 20130903012919) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(:version => 20130903005945) do
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "facebook_path"
   end
 
   create_table "posts", :force => true do |t|
