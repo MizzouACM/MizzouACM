@@ -17,7 +17,6 @@ group :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -29,21 +28,24 @@ group :production do
   gem 'newrelic_rpm'
 end
 
+gem 'sass', "~> 3.2.5"
+gem 'sass-rails'
+
 gem 'redcarpet'
 gem 'jquery-rails'
-gem "haml-rails", ">= 0.4"
-gem "html2haml", ">= 1.0.1", :group => :development
+gem "haml-rails"
+gem "html2haml", :group => :development
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'aws-sdk'
 gem 'aws-s3'
 gem 'thin'
 gem 'github_api'
 
-gem "bootstrap-sass", ">= 2.3.0.0"
-gem "omniauth", ">= 1.1.3"
+gem "bootstrap-sass"
+gem "omniauth"
 gem "omniauth-github", :git => 'git://github.com/ryan-endacott/omniauth-github.git'
-gem "simple_form", ">= 2.1.0"
-gem "quiet_assets", ">= 1.0.2", :group => :development
-gem "figaro", ">= 0.6.3"
-gem "better_errors", ">= 0.7.2", :group => :development
-gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
+gem "simple_form"
+gem "quiet_assets", :group => :development
+gem "figaro"
+gem "better_errors", :group => :development
+gem "binding_of_caller", :group => :development, :platforms => [:mri_19, :rbx]
