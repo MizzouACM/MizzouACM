@@ -10,15 +10,23 @@
         %h2 Get Involved
         %p
           Anyone can join ACM regardless of skill level.  We typically have 1-2 meetings per month, as well as other activities.  For more information on upcoming events, check out our
-          =link_to('events page', events_path)+"."
+          =link_to('events page', events_path)
+          and the
+          =link_to('Facebook group', "https://www.facebook.com/groups/MizzouACM/")+"."
     .span4
-      -@posts.first(4).each do |post|
-        .post
-          =link_to post do
-            .transparent-region
-              %h3=post.title
-              %p!=post.markdown_summary
-              Read More
+      .transparent-region
+        %h3 Officers
+        %h5
+          Dan Silver, President
+        %h5
+          Ben Sammons, Vice President
+        %h5
+          Gabrielle Perdieu, Secretary
+        %h5
+          Megan Ritchey, Treasurer
+        %h5
+          Cj Voege, Social Chair
+        %p If you have any questions about ACM, please contact Dan at das2c3@mail.missouri.edu
 
 //If you're up for learning how to grapple with the latest tech, we encourage you to join us.
 //Employers will be impressed, you'll be the hacking master everyone looks up to, and you'll make really cool stuff.  What's not to like?
